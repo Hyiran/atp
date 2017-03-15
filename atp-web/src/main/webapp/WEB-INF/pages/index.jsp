@@ -154,7 +154,7 @@
                                 <div class="caption">
                                     <i class="icon-bar-chart font-dark hide"></i>
                                     <span class="caption-subject font-dark bold uppercase">Site Visits</span>
-                                    <span class="caption-helper">weekly stats${ctx}.</span>
+                                    <span class="caption-helper">weekly stats...</span>
                                 </div>
                                 <div class="actions">
                                     <div class="btn-group btn-group-devided" data-toggle="buttons">
@@ -183,7 +183,7 @@
                                 <div class="caption">
                                     <i class="icon-share font-red-sunglo hide"></i>
                                     <span class="caption-subject font-dark bold uppercase">Revenue</span>
-                                    <span class="caption-helper">monthly stats${ctx}.</span>
+                                    <span class="caption-helper">monthly stats...</span>
                                 </div>
                                 <div class="actions">
                                     <div class="btn-group">

@@ -20,7 +20,7 @@
             <!-- END SIDEBAR TOGGLER BUTTON -->
             <li class="sidebar-search-wrapper">
                 <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-                <form class="sidebar-search  " action="page_general_search_3.jsp" method="POST">
+                <form class="sidebar-search  " action="../page/search.jsp" method="POST">
                     <a href="javascript:;" class="remove">
                         <i class="icon-close"></i>
                     </a>
@@ -43,7 +43,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start ">
-                        <a href="index.jsp" class="nav-link ">
+                        <a href="../index.jsp" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">Dashboard 1</span>
                         </a>
