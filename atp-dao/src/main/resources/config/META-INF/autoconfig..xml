@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group name="atpDao">
+        <property name="jdbc.mysql.driver" description="数据库驱动程序名" defaultValue="com.mysql.jdbc.Driver"/>
+        <property name="jdbc.mysql.url" description="数据库连接URL地址"
+                  defaultValue="jdbc:mysql://192.168.2.12:3306/e_fmt?characterEncoding=utf8&amp;allowMultiQueries=true"/>
+        <property name="jdbc.mysql.username" description="数据库用户名" defaultValue="66money"/>
+        <property name="jdbc.mysql.password" description="数据库密码" defaultValue="DpB8Nhf3bnE="/>
+        <property name="jdbc.maxActive" description="最大活动连接数" defaultValue="1000"/>
+        <property name="jdbc.maxIdle" description="最大空闲连接数" defaultValue="5"/>
+        <property name="jdbc.testOnBorrow" description="借用连接时测试" defaultValue="false"/>
+        <property name="jdbc.testWhileIdle" description="空闲时连接测试" defaultValue="true"/>
+        <property name="jdbc.testOnReturn" description="归还连接时测试" defaultValue="false"/>
+        <property name="jdbc.initialSize" description="初始化连接池数目" defaultValue="20"/>
+        <property name="jdbc.minIdle" description="最小空闲连接数" defaultValue="5"/>
+        <property name="jdbc.maxWait" description="最大等待连接时间" defaultValue="60000"/>
+        <property name="jdbc.removeAbandoned" description="是否回收超时连接" defaultValue="true"/>
+        <property name="jdbc.removeAbandonedTimeout" description="自动回收超时时间（s）" defaultValue="180"/>
+        <property name="jdbc.timeBetweenEvictionRunsMillis" description="Evict线程的时间（ms）" defaultValue="30000"/>
+        <property name="jdbc.validationQueryTimeout" description="执行检查时超时时间" defaultValue="1"/>
+    </group>
+    <script>
+        <generate template="/dao.properties.vm" destfile="/dao.properties" charset="UTF-8"/>
+    </script>
+</config>

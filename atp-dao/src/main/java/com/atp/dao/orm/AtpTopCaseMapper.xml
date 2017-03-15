@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atp.dao.AtpTopCaseMapper">
+    <resultMap id="BaseResultMap" type="com.atp.model.AtpTopCase">
+        <id column="case_id" property="caseId" jdbcType="INTEGER"/>
+        <result column="busin_type" property="businType" jdbcType="VARCHAR"/>
+        <result column="inst_id" property="instId" jdbcType="VARCHAR"/>
+        <result column="request_data" property="requestData" jdbcType="VARCHAR"/>
+        <result column="response_data" property="responseData" jdbcType="VARCHAR"/>
+        <result column="creat_time" property="creatTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="creat_user" property="creatUser" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        case_id, busin_type, inst_id, request_data, response_data, creat_time, update_time,
+        creat_user
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from atp_top_case
+        where case_id = #{caseId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from atp_top_case
+        where case_id = #{caseId,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.atp.model.AtpTopCase">
+        insert into atp_top_case (case_id, busin_type, inst_id,
+        request_data, response_data, creat_time,
+        update_time, creat_user)
+        values (#{caseId,jdbcType=INTEGER}, #{businType,jdbcType=VARCHAR}, #{instId,jdbcType=VARCHAR},
+        #{requestData,jdbcType=VARCHAR}, #{responseData,jdbcType=VARCHAR}, #{creatTime,jdbcType=TIMESTAMP},
+        #{updateTime,jdbcType=TIMESTAMP}, #{creatUser,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.atp.model.AtpTopCase">
+        insert into atp_top_case
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="caseId != null">
+                case_id,
+            </if>
+            <if test="businType != null">
+                busin_type,
+            </if>
+            <if test="instId != null">
+                inst_id,
+            </if>
+            <if test="requestData != null">
+                request_data,
+            </if>
+            <if test="responseData != null">
+                response_data,
+            </if>
+            <if test="creatTime != null">
+                creat_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="creatUser != null">
+                creat_user,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="caseId != null">
+                #{caseId,jdbcType=INTEGER},
+            </if>
+            <if test="businType != null">
+                #{businType,jdbcType=VARCHAR},
+            </if>
+            <if test="instId != null">
+                #{instId,jdbcType=VARCHAR},
+            </if>
+            <if test="requestData != null">
+                #{requestData,jdbcType=VARCHAR},
+            </if>
+            <if test="responseData != null">
+                #{responseData,jdbcType=VARCHAR},
+            </if>
+            <if test="creatTime != null">
+                #{creatTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatUser != null">
+                #{creatUser,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.atp.model.AtpTopCase">
+        update atp_top_case
+        <set>
+            <if test="businType != null">
+                busin_type = #{businType,jdbcType=VARCHAR},
+            </if>
+            <if test="instId != null">
+                inst_id = #{instId,jdbcType=VARCHAR},
+            </if>
+            <if test="requestData != null">
+                request_data = #{requestData,jdbcType=VARCHAR},
+            </if>
+            <if test="responseData != null">
+                response_data = #{responseData,jdbcType=VARCHAR},
+            </if>
+            <if test="creatTime != null">
+                creat_time = #{creatTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatUser != null">
+                creat_user = #{creatUser,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where case_id = #{caseId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.atp.model.AtpTopCase">
+        update atp_top_case
+        set busin_type = #{businType,jdbcType=VARCHAR},
+        inst_id = #{instId,jdbcType=VARCHAR},
+        request_data = #{requestData,jdbcType=VARCHAR},
+        response_data = #{responseData,jdbcType=VARCHAR},
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        creat_user = #{creatUser,jdbcType=VARCHAR}
+        where case_id = #{caseId,jdbcType=INTEGER}
+    </update>
+</mapper>

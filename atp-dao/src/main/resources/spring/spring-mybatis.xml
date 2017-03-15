@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	">
+
+    <!-- 引入配置文件 -->
+    <context:property-placeholder location="classpath:dao.properties"/>
+
+    <!-- mysql数据源-->
+    <bean id="mySqlDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${jdbc.mysql.driver}"/>
+        <property name="url" value="${jdbc.mysql.url}"/>
+        <property name="username" value="${jdbc.mysql.username}"/>
+        <property name="password" value="${jdbc.mysql.password}"/>
+        <!-- 池启动时创建的连接数量-->
+        <property name="initialSize" value="${jdbc.initialSize}"/>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${jdbc.minIdle}"/>
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${jdbc.maxIdle}"/>
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${jdbc.maxActive}"/>
+        <!-- 等待超时以毫秒为单位，在抛出异常之前，池等待连接被回收的最长时间（当没有可用连接时）。设置为-1表示无限等待。 -->
+        <property name="maxWait" value="${jdbc.maxWait}"/>
+        <!--设置sql语句的自动提交，即执行一条sql，都立即提交-->
+        <property name="defaultAutoCommit" value="${jdbc.defaultAutoCommit}"/>
+        <!--设置自动回收超时连接 -->
+        <property name="removeAbandoned" value="${jdbc.removeAbandoned}"/>
+        <!-- 自动回收超时时间(以秒数为单位) -->
+        <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}"/>
+        <!-- 设置在自动回收超时连接的时候打印连接的超时错误 -->
+        <property name="logAbandoned" value="true"/>
+        <property name="testWhileIdle" value="${jdbc.testWhileIdle}"/>
+        <!-- 设置的Evict线程的时间，单位ms，大于0才会开启evict检查线程 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}"/>
+        <!-- 代表每次检查链接的数量，设置和maxActive一样大 -->
+        <property name="numTestsPerEvictionRun" value="${jdbc.numTestsPerEvictionRun}"/>
+        <property name="minEvictableIdleTimeMillis" value=" ${jdbc.minEvictableIdleTimeMillis}"/>
+    </bean>
+
+
+    <!-- 配置mybatis的sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--dataSource属性指定要用到的连接池-->
+        <property name="dataSource" ref="mySqlDataSource"/>
+        <!-- 自动扫描mappers.xml文件 ，要加上classpath:com/...-->
+         <!--<property name="mapperLocations" value="classpath:com/atp/dao/orm/*.xml"/>-->
+        <!--configLocation属性指定mybatis的核心配置文件-->
+        <property name="configLocation" value="classpath:config/mybatis-config.xml"/>
+    </bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.atp.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+
+    <!-- 启用对事务注解的支持 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!-- 配置使Spring采用CGLIB代理 -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="mySqlDataSource"/>
+    </bean>
+
+    <!-- 配置事务通知属性 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!-- 定义事务传播属性 -->
+        <tx:attributes>
+            <!-- 对insert,update,delete 开头的方法进行事务管理,只要有异常就回滚 -->
+            <tx:method name="insert*" propagation="REQUIRED" isolation="REPEATABLE_READ"
+                       rollback-for="java.lang.Throwable"/>
+            <tx:method name="update*" propagation="REQUIRED" isolation="REPEATABLE_READ"
+                       rollback-for="java.lang.Throwable"/>
+            <tx:method name="delete*" propagation="REQUIRED" isolation="REPEATABLE_READ"
+                       rollback-for="java.lang.Throwable"/>
+            <tx:method name="edit*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="save*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="add*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="new*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="set*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="remove*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="change*" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="find*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="load*" propagation="REQUIRED" read-only="true"/>
+            <tx:method name="*" propagation="REQUIRED" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <!-- 配置事务切面 -->
+    <aop:config>
+        <aop:pointcut id="serviceOperation" expression="execution(* com.atp.service.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
+    </aop:config>
+</beans>
