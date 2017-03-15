@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atp.dao.AtpTopCfgMapper">
+    <resultMap id="BaseResultMap" type="com.atp.model.AtpTopCfg">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="config" property="config" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="config_type" property="configType" jdbcType="VARCHAR"/>
+        <result column="creat_time" property="creatTime" jdbcType="TIMESTAMP"/>
+        <result column="creat_user" property="creatUser" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, config, status, config_type, creat_time, creat_user
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from atp_top_config
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from atp_top_config
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.atp.model.AtpTopCfg">
+        insert into atp_top_config (id, config, status,
+        config_type, creat_time, creat_user
+        )
+        values (#{id,jdbcType=INTEGER}, #{config,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+        #{configType,jdbcType=VARCHAR}, #{creatTime,jdbcType=TIMESTAMP}, #{creatUser,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.atp.model.AtpTopCfg">
+        insert into atp_top_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="config != null">
+                config,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="configType != null">
+                config_type,
+            </if>
+            <if test="creatTime != null">
+                creat_time,
+            </if>
+            <if test="creatUser != null">
+                creat_user,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="config != null">
+                #{config,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="configType != null">
+                #{configType,jdbcType=VARCHAR},
+            </if>
+            <if test="creatTime != null">
+                #{creatTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatUser != null">
+                #{creatUser,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.atp.model.AtpTopCfg">
+        update atp_top_config
+        <set>
+            <if test="config != null">
+                config = #{config,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="configType != null">
+                config_type = #{configType,jdbcType=VARCHAR},
+            </if>
+            <if test="creatTime != null">
+                creat_time = #{creatTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatUser != null">
+                creat_user = #{creatUser,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.atp.model.AtpTopCfg">
+        update atp_top_config
+        set config = #{config,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
+        config_type = #{configType,jdbcType=VARCHAR},
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+        creat_user = #{creatUser,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

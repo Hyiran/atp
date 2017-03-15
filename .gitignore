@@ -1,0 +1,19 @@
+# Project ignore files
+/.settings
+/.idea
+/.classpath
+/.project
+*.iml
+
+/.tomcatplugin
+/.target
+/work
+/.src/main/webapp/.#webclasspath
+
+target/
+/out/
+/lib/
+atp-biz/src/test/
+atp-dao/src/test/java/
+atp-model/src/main/resources/
+atp-model/src/test/

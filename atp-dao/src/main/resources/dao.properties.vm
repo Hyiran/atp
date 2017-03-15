@@ -1,0 +1,23 @@
+#============================================================================
+# MySQL
+#============================================================================
+jdbc.mysql.driver=${jdbc.mysql.driver}
+jdbc.mysql.url=${jdbc.mysql.url}
+jdbc.mysql.username=${jdbc.mysql.username}
+jdbc.mysql.password=${jdbc.mysql.password}
+
+#============================================================================
+# common settings
+#============================================================================
+jdbc.initialSize=${jdbc.initialSize}
+jdbc.minIdle=${jdbc.minIdle}
+jdbc.maxIdle=${jdbc.maxIdle}
+jdbc.maxActive=${jdbc.maxActive}
+jdbc.maxWait=${jdbc.maxWait}
+jdbc.defaultAutoCommit=${jdbc.defaultAutoCommit}
+jdbc.removeAbandoned=${jdbc.removeAbandoned}
+jdbc.removeAbandonedTimeout=${jdbc.removeAbandonedTimeout}
+jdbc.testWhileIdle=${jdbc.testWhileIdle}
+jdbc.timeBetweenEvictionRunsMillis=${jdbc.timeBetweenEvictionRunsMillis}
+jdbc.numTestsPerEvictionRun=${jdbc.numTestsPerEvictionRun}
+jdbc.minEvictableIdleTimeMillis=${jdbc.minEvictableIdleTimeMillis}
