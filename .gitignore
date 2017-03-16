@@ -16,3 +16,4 @@ atp-biz/src/test/
 atp-dao/src/test/java/
 atp-model/src/main/resources/
 atp-model/src/test/
+!/lib/
