@@ -59,18 +59,6 @@
                     <span class="title">UI Features</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="ui_timeline.jsp" class="nav-link ">
-                            <span class="title">Timeline 1</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="ui_tree.jsp" class="nav-link ">
-                            <span class="title">Tree View</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -78,13 +66,6 @@
                     <span class="title">Components</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="components_select2.jsp" class="nav-link ">
-                            <span class="title">Select2 Dropdowns</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -92,13 +73,6 @@
                     <span class="title">Elements</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="elements_steps.jsp" class="nav-link ">
-                            <span class="title">Steps</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -114,7 +88,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">
-                                <a href="table_datatables_managed.jsp" class="nav-link "> Managed
+                                <a href="../page/datatables_managed.jsp" class="nav-link "> Managed
                                     Datatables </a>
                             </li>
                         </ul>
@@ -129,7 +103,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="charts_amcharts.jsp" class="nav-link ">
+                        <a href="../page/amcharts.jsp" class="nav-link ">
                             <span class="title">amChart</span>
                         </a>
                     </li>
@@ -144,13 +118,6 @@
                     <span class="title">Page Layouts</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="layout_boxed_page.jsp" class="nav-link ">
-                            <span class="title">Boxed Page</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
             <li class="heading">
                 <h3 class="uppercase">Pages</h3>
@@ -163,13 +130,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="ecommerce_products.jsp" class="nav-link ">
+                        <a href="../page/products.jsp" class="nav-link ">
                             <i class="icon-graph"></i>
                             <span class="title">Products</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="ecommerce_products_edit.jsp" class="nav-link ">
+                        <a href="../page/productsedit.jsp" class="nav-link ">
                             <i class="icon-graph"></i>
                             <span class="title">Product Edit</span>
                         </a>
@@ -184,7 +151,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="app_calendar.jsp" class="nav-link ">
+                        <a href="../page/calendar.jsp" class="nav-link ">
                             <i class="icon-calendar"></i>
                             <span class="title">Calendar</span>
                         </a>
@@ -205,40 +172,9 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page_user_profile_1.jsp" class="nav-link ">
-                            <i class="icon-user"></i>
-                            <span class="title">Profile 1</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page_user_profile_1_account.jsp" class="nav-link ">
-                            <i class="icon-user-female"></i>
-                            <span class="title">Profile 1 Account</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page_user_profile_1_help.jsp" class="nav-link ">
-                            <i class="icon-user-following"></i>
-                            <span class="title">Profile 1 Help</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="icon-notebook"></i>
-                            <span class="title">Login</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="page_user_login_1.jsp" class="nav-link " target="_blank"> Login Page
-                                    1 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page_user_lock_1.jsp" class="nav-link " target="_blank">
+                        <a href="../page/pagelock.jsp" class="nav-link " target="_blank">
                             <i class="icon-lock"></i>
-                            <span class="title">Lock Screen 1</span>
+                            <span class="title">Lock Screen</span>
                         </a>
                     </li>
                 </ul>
@@ -249,45 +185,6 @@
                     <span class="title">General</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="page_general_about.jsp" class="nav-link ">
-                            <i class="icon-info"></i>
-                            <span class="title">About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="icon-notebook"></i>
-                            <span class="title">Portfolio</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="page_general_portfolio_1.jsp" class="nav-link "> Portfolio 1 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <i class="icon-magnifier"></i>
-                            <span class="title">Search</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item ">
-                                <a href="page_general_search.jsp" class="nav-link "> Search 1 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page_general_faq.jsp" class="nav-link ">
-                            <i class="icon-wrench"></i>
-                            <span class="title">FAQ</span>
-                        </a>
-                    </li>
-
-                </ul>
             </li>
             <li class="nav-item  active open">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -298,24 +195,19 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page_cookie_consent_1.jsp" class="nav-link ">
-                            <span class="title">Cookie Consent 1</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a href="page_system_coming_soon.jsp" class="nav-link " target="_blank">
+                        <a href="../page/comingsoon.jsp" class="nav-link " target="_blank">
                             <span class="title">Coming Soon</span>
                         </a>
                     </li>
                     <li class="nav-item  active open">
-                        <a href="page_system_404_1.jsp" class="nav-link ">
-                            <span class="title">404 Page 1</span>
+                        <a href="../error/404.jsp" class="nav-link ">
+                            <span class="title">404 Page</span>
                             <span class="selected"></span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="page_system_500_1.jsp" class="nav-link ">
-                            <span class="title">500 Page 1</span>
+                        <a href="../error/500.jsp" class="nav-link ">
+                            <span class="title">500 Page</span>
                         </a>
                     </li>
                 </ul>
