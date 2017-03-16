@@ -39,21 +39,21 @@
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME LAYOUT STYLES -->
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="favicn.ico"/>
+    <link rel="shortcut icon" href="${ctx}/favicn.ico"/>
 </head>
 <!-- END HEAD -->
 
 <body class=" login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="login.jsp">
+    <a href="${ctx}/page/login">
         <img src="${ctx}/resources/pages/img/logo-big.png" alt=""/> </a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="login.jsp" method="post">
+    <form class="login-form" action="${ctx}/page/index" method="post">
         <h3 class="form-title font-green">Sign In</h3>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>

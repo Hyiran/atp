@@ -20,7 +20,7 @@
             <!-- END SIDEBAR TOGGLER BUTTON -->
             <li class="sidebar-search-wrapper">
                 <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-                <form class="sidebar-search  " action="../page/search.jsp" method="POST">
+                <form class="sidebar-search  " action="${ctx}/page/search" method="POST">
                     <a href="javascript:;" class="remove">
                         <i class="icon-close"></i>
                     </a>
@@ -43,7 +43,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item start ">
-                        <a href="../index.jsp" class="nav-link ">
+                        <a href="${ctx}/index" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">Dashboard 1</span>
                         </a>
@@ -88,7 +88,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">
-                                <a href="../page/datatables_managed.jsp" class="nav-link "> Managed
+                                <a href="${ctx}/page/datatables_managed" class="nav-link "> Managed
                                     Datatables </a>
                             </li>
                         </ul>
@@ -103,7 +103,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="../page/amcharts.jsp" class="nav-link ">
+                        <a href="${ctx}/page/amcharts" class="nav-link ">
                             <span class="title">amChart</span>
                         </a>
                     </li>
@@ -130,13 +130,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="../page/products.jsp" class="nav-link ">
+                        <a href="${ctx}/page/products" class="nav-link ">
                             <i class="icon-graph"></i>
                             <span class="title">Products</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="../page/productsedit.jsp" class="nav-link ">
+                        <a href="${ctx}/page/productsedit" class="nav-link ">
                             <i class="icon-graph"></i>
                             <span class="title">Product Edit</span>
                         </a>
@@ -151,7 +151,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="../page/calendar.jsp" class="nav-link ">
+                        <a href="${ctx}/page/calendar" class="nav-link ">
                             <i class="icon-calendar"></i>
                             <span class="title">Calendar</span>
                         </a>
@@ -172,7 +172,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="../page/pagelock.jsp" class="nav-link " target="_blank">
+                        <a href="${ctx}/page/pagelock" class="nav-link " target="_blank">
                             <i class="icon-lock"></i>
                             <span class="title">Lock Screen</span>
                         </a>
@@ -195,18 +195,18 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="../page/comingsoon.jsp" class="nav-link " target="_blank">
+                        <a href="${ctx}/page/comingsoon" class="nav-link " target="_blank">
                             <span class="title">Coming Soon</span>
                         </a>
                     </li>
                     <li class="nav-item  active open">
-                        <a href="../error/404.jsp" class="nav-link ">
+                        <a href="${ctx}/error/404" class="nav-link ">
                             <span class="title">404 Page</span>
                             <span class="selected"></span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="../error/500.jsp" class="nav-link ">
+                        <a href="${ctx}/error/500" class="nav-link ">
                             <span class="title">500 Page</span>
                         </a>
                     </li>

@@ -38,6 +38,86 @@ public class PageController {
     }
 
     /**
+     * Search页
+     *
+     * @return the string
+     */
+    @RequestMapping("/search")
+    public String search() {
+        return "search";
+    }
+
+    /**
+     * Products页
+     *
+     * @return the string
+     */
+    @RequestMapping("/products")
+    public String products() {
+        return "products";
+    }
+
+    /**
+     * Prodictsedit页
+     *
+     * @return the string
+     */
+    @RequestMapping("/productsedit")
+    public String prodictsedit() {
+        return "productsedit";
+    }
+
+    /**
+     * Pagelock页
+     *
+     * @return the string
+     */
+    @RequestMapping("/pagelock")
+    public String pagelock (){
+        return "pagelock";
+    }
+
+    /**
+     * Comingsoon页
+     *
+     * @return the string
+     */
+    @RequestMapping("/comingsoon")
+    public String comingsoon (){
+        return "comingsoon";
+    }
+
+    /**
+     * Calendar页
+     *
+     * @return the string
+     */
+    @RequestMapping("/calendar")
+    public String calendar (){
+        return "calendar";
+    }
+
+    /**
+     * Amcharts页
+     *
+     * @return the string
+     */
+    @RequestMapping("/amcharts")
+    public String amcharts (){
+        return "amcharts";
+    }
+
+    /**
+     * Datatables页
+     *
+     * @return the string
+     */
+    @RequestMapping("/datatables_managed")
+    public String datatablesManaged (){
+        return "datatables_managed";
+    }
+
+    /**
      * 404页
      */
     @RequestMapping("/404")
