@@ -32,7 +32,7 @@
     <link href="${ctx}/resources/global/css/plugins.min.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME GLOBAL STYLES -->
     <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href="${ctx}/resources/pages/css/coming-soon.min.css" rel="stylesheet" type="text/css" />
+    <link href="${ctx}/resources/pages/css/coming-soon.min.css" rel="stylesheet" type="text/css"/>
     <!-- END PAGE LEVEL STYLES -->
     <link rel="shortcut icon" href="${ctx}/favicon.ico"/>
 </head>
@@ -42,20 +42,22 @@
     <div class="row">
         <div class="col-md-12 coming-soon-header">
             <a class="brand" href="../index.jsp">
-                <img src="${ctx}/resources/pages/img/logo-big.png" alt="logo" /> </a>
+                <img src="${ctx}/resources/pages/img/logo-big.png" alt="logo"/> </a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 coming-soon-content">
             <h1>Coming Soon!</h1>
-            <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi vehicula sem ut volutpat. Ut non libero magna fusce condimentum eleifend
+            <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                deleniti atque corrupti quos dolores et quas molestias excepturi vehicula sem ut volutpat. Ut non libero
+                magna fusce condimentum eleifend
                 enim a feugiat. </p>
             <br>
             <form class="form-inline" action="#">
                 <div class="input-group input-group-lg input-large">
                     <input type="text" class="form-control">
                             <span class="input-group-btn">
-                                <button class="btn green" type="button"> Subscribe </button>
+                                <button class="btn green" type="button"> Subscribe</button>
                             </span>
                 </div>
             </form>
@@ -84,12 +86,12 @@
             </ul>
         </div>
         <div class="col-md-6 coming-soon-countdown">
-            <div id="defaultCountdown"> </div>
+            <div id="defaultCountdown"></div>
         </div>
     </div>
     <!--/end row-->
     <div class="row">
-        <div class="col-md-12 coming-soon-footer"> 2014 &copy; Metronic. Admin Dashboard Template. </div>
+        <div class="col-md-12 coming-soon-footer"> 2014 &copy; Metronic. Admin Dashboard Template.</div>
     </div>
 </div>
 <!-- BEGIN CORE PLUGINS -->

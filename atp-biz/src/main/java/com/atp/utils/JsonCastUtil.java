@@ -15,8 +15,9 @@ import com.alibaba.fastjson.JSON;
 import java.util.Map;
 
 /**
- * <p>Description:JSON转换工具类</p> 
+ * <p>Description:JSON转换工具类</p>
  * <p>Company:上海投投金融有限责任公司</p>
+ *
  * @author 廖明华
  * @version V1.0
  */
@@ -25,6 +26,7 @@ public class JsonCastUtil {
 
     /**
      * <p>Description:json字符串转成Map对象</p>
+     *
      * @param str json字符串
      * @return json字符串对应的Map对象
      * @author 廖明华
@@ -37,6 +39,7 @@ public class JsonCastUtil {
 
     /**
      * <p>Description:Map转成Json字符串</p>
+     *
      * @param map map对象
      * @return map对象转换后的json对象
      * @author 廖明华
@@ -48,7 +51,8 @@ public class JsonCastUtil {
 
     /**
      * <p>Description:将JSON字符串转成对象</p>
-     * @param t 对象
+     *
+     * @param t   对象
      * @param str json字符串
      * @return 对象
      * @author 廖明华

@@ -18,9 +18,9 @@ import java.util.regex.Pattern;
  * Description: 通用工具类对象，可以统一对该类进行方法增加
  * </p>
  *
- * @Company:上海投投金融有限责任公司
  * @author 廖明华
  * @version V1.0
+ * @Company:上海投投金融有限责任公司
  */
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class CommonUtils {
@@ -78,7 +78,7 @@ public class CommonUtils {
      * </p>
      *
      * @param inParam 参数
-     * @param prefix 前缀
+     * @param prefix  前缀
      * @return 添加前缀后的参数key和value
      * @author 廖明华
      * @date 2015年8月27日 上午1:19:43
@@ -125,7 +125,7 @@ public class CommonUtils {
      * 例如："abc"包含'a',次方法返回true
      * </p>
      *
-     * @param aStr 被比较字符串
+     * @param aStr  被比较字符串
      * @param aChar 比较字符串
      * @return 判断字符是否包含
      * @author 廖明华
@@ -243,7 +243,6 @@ public class CommonUtils {
     }
 
     /**
-     *
      * <p>
      * Description:圆转分
      * </p>
@@ -325,6 +324,7 @@ public class CommonUtils {
 
     /**
      * <p>Description:中文列表排序</p>
+     *
      * @param list
      * @author 王家佳
      * @date 2016-1-20 上午11:15:39
@@ -404,8 +404,8 @@ public class CommonUtils {
     }*/
 
     /**
-     *
      * <p>Description:根据基金状态码判断基金申购状态</p>
+     *
      * @param resStatus 状态码
      * @return 业务代码
      * @author 李星星
@@ -434,8 +434,8 @@ public class CommonUtils {
     }
 
     /**
-     *
      * <p>Description:根据基金状态码判断基金赎回状态</p>
+     *
      * @param resStatus 状态码
      * @return 业务代码
      * @author 李星星
@@ -460,7 +460,7 @@ public class CommonUtils {
     /**
      * 查询金正风险等级说明
      * 风险等级 :01-低风险,02-中低风险,03-中风险,04-中高风险,05-高风险
-     * */
+     */
     public static String getRiskLevelMark(String riskLevel) {
 
         if ("01".equals(riskLevel)) {

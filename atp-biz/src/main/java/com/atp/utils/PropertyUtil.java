@@ -20,8 +20,9 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * <p>Description:读取property配置文件工具类</p> 
+ * <p>Description:读取property配置文件工具类</p>
  * <p>Company:上海投投金融有限责任公司</p>
+ *
  * @author 廖明华
  * @version V1.0
  */
@@ -43,7 +44,7 @@ public class PropertyUtil {
 
 
     /**
-     * <p>Title: PropertyUtil</p> 
+     * <p>Title: PropertyUtil</p>
      * <p>Description: 默认加载/biz.properties</p>
      */
     private PropertyUtil() {
@@ -55,6 +56,7 @@ public class PropertyUtil {
 
     /**
      * <p>Description:获取实例对象</p>
+     *
      * @return 实例对象
      * @author 廖明华
      * @date 2015年8月31日 下午5:35:02
@@ -68,6 +70,7 @@ public class PropertyUtil {
 
     /**
      * <p>Description:加载属性文件</p>
+     *
      * @param propsPath property文件路径
      * @return Properties 对象
      * @author 廖明华
@@ -105,6 +108,7 @@ public class PropertyUtil {
 
     /**
      * <p>Description:根据key查询对应的值</p>
+     *
      * @param key propertity文件中key
      * @return key对应的值
      * @author 廖明华
@@ -116,8 +120,9 @@ public class PropertyUtil {
 
     /**
      * <p>Description:获取字符型属性</p>
+     *
      * @param props Properties对象
-     * @param key property文件中key字符
+     * @param key   property文件中key字符
      * @return 字符属性
      * @author 廖明华
      * @date 2015年8月31日 下午2:06:14
@@ -132,7 +137,8 @@ public class PropertyUtil {
 
     /**
      * <p>Description:获取字符型属性（带有默认值）</p>
-     * @param key 字符型对应的属性key
+     *
+     * @param key          字符型对应的属性key
      * @param defalutValue 默认值
      * @return 字符型属性（带有默认值）
      * @author 廖明华

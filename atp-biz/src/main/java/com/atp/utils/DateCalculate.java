@@ -20,18 +20,19 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * @Description: 时间工具类
- * @Company:上海投投金融有限责任公司
  * @author 刘论
  * @version V1.0
+ * @Description: 时间工具类
+ * @Company:上海投投金融有限责任公司
  */
 public class DateCalculate {
 
 
     /**
      * title :isSupportT0
-     * @Description: 获取当前时间工具类
+     *
      * @return
+     * @Description: 获取当前时间工具类
      * @author 刘论
      * @date 2015年8月26日 上午11:46:54
      */
@@ -41,12 +42,10 @@ public class DateCalculate {
     }
 
     /**
-     *
      * 一个java.util.Date类型的对象 变成一个字符串
-     * @param date
-     *            日期
-     * @param format
-     *            格式
+     *
+     * @param date   日期
+     * @param format 格式
      * @return String  返回字符型日期
      * @author 刘论
      * @date 2015年8月26日 上午11:46:54
@@ -82,11 +81,9 @@ public class DateCalculate {
      * 把一个字符串变成  一个java.util.Date类型的对象
      *
      * @param dateStr 日期字符串
-     *
-     * @param format
-     *               格式字符串
-     *
-     * 说明 这俩个参数必须相对应;
+     * @param format  格式字符串
+     *                <p>
+     *                说明 这俩个参数必须相对应;
      * @return 返回日期
      */
     public static Date parseDate(String dateStr, String format) {
@@ -109,8 +106,7 @@ public class DateCalculate {
     /**
      * 返回年份
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回年份
      */
     public static int getYear(Date date) {
@@ -122,8 +118,7 @@ public class DateCalculate {
     /**
      * 返回月份
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回月份
      */
     public static int getMonth(Date date) {
@@ -135,8 +130,7 @@ public class DateCalculate {
     /**
      * 返回月份中的某一日
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回月份中的某一日
      */
     public static int getDay(Date date) {
@@ -148,8 +142,7 @@ public class DateCalculate {
     /**
      * 返回小时
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回小时
      */
     public static int getHour(Date date) {
@@ -161,8 +154,7 @@ public class DateCalculate {
     /**
      * 返回分钟
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回分钟
      */
     public static int getMinute(Date date) {
@@ -174,8 +166,7 @@ public class DateCalculate {
     /**
      * 返回秒钟
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回秒钟
      */
     public static int getSecond(Date date) {
@@ -187,8 +178,7 @@ public class DateCalculate {
     /**
      * 返回毫秒
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回毫秒
      */
     public static long getMillis(Date date) {
@@ -200,8 +190,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串日期yyyy-MM-dd
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符串日期
      */
     public static String getStringDate(Date date) {
@@ -211,8 +200,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串日期yyyyMMdd
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符串日期
      */
     public static String getShortStringDate(Date date) {
@@ -222,8 +210,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串时间HH:mm:ss
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符串时间
      */
     public static String getStringTime(Date date) {
@@ -232,6 +219,7 @@ public class DateCalculate {
 
     /**
      * 返回格式化的字符串时间MM-dd(yyyy-MM-dd)[DATE_FORMAT_YYYY_MM_DD]
+     *
      * @param date 日期
      * @return 返回字符串时间
      */
@@ -241,6 +229,7 @@ public class DateCalculate {
 
     /**
      * 返回格式化的字符串时间MM-dd(yyyy-MM-dd)[DATE_FORMAT_YYYY_MM_DD]
+     *
      * @param date 日期
      * @return 返回字符串时间
      */
@@ -250,6 +239,7 @@ public class DateCalculate {
 
     /**
      * 返回格式化的字符串时间MM-dd(yyyy-MM-dd)[DATE_FORMAT_YYYY_MM_DD]
+     *
      * @param date 日期
      * @return 返回字符串时间
      */
@@ -260,8 +250,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串时间yyyy-MM-dd HH:mm:ss
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符型日期时间
      */
     public static String getStringDateTime(Date date) {
@@ -271,8 +260,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串时间yyyy-MM-dd HH:mm
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符型日期时间
      */
     public static String getStringDateMinTime(Date date) {
@@ -280,17 +268,16 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getShortStringDateMinTime
-     * @Description: 返回格式化的字符串时间yyyyMMddHHmm
      * @param date 日期类型
      * @return
+     * @Title:getShortStringDateMinTime
+     * @Description: 返回格式化的字符串时间yyyyMMddHHmm
      */
     public static String getShortStringDateMinTime(Date date) {
         return format(date, C_TIME_PATTON_DEFAULT_2);
     }
 
     /**
-     *
      * @Title:getShortTime
      * @Description: 格式化返回字符串HHmmss
      */
@@ -299,12 +286,11 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getDateTime
-     * 今年返MM-dd HH:mm
-     * 以前返yyyy-MM-dd HH:mm
-     * @Description: 返回格式化的字符串时间为
      * @param date 日期
      * @return
+     * @Title:getDateTime 今年返MM-dd HH:mm
+     * 以前返yyyy-MM-dd HH:mm
+     * @Description: 返回格式化的字符串时间为
      */
     public static String getDateTime(Date date) {
         if (getYear(new Date()) == getYear(date)) {
@@ -317,10 +303,8 @@ public class DateCalculate {
     /**
      * 日期加天数
      *
-     * @param date
-     *            日期
-     * @param day
-     *            天数
+     * @param date 日期
+     * @param day  天数
      * @return 返回相加后的日期
      */
     public static Date addDate(Date date, int day) {
@@ -330,9 +314,9 @@ public class DateCalculate {
     }
 
     /**
-     * @Description: 返回下一日期
      * @param dateStr
      * @return
+     * @Description: 返回下一日期
      * @author 王家佳
      * @date 2015-11-12 下午4:38:42
      */
@@ -352,10 +336,9 @@ public class DateCalculate {
     /**
      * 日期减日期
      * 求相差几天的问题
-     * @param date1
-     *            日期
-     * @param date2
-     *            日期
+     *
+     * @param date1 日期
+     * @param date2 日期
      * @return 返回相减后的日期
      */
     public static int diffDate(Date date1, Date date2) {
@@ -364,30 +347,30 @@ public class DateCalculate {
 
 
     /**
-     * @Title:parseDate
-     * @Description: 字符串日期转Date型日期
      * @param dateStr 格式如：yyyy-MM-dd
      * @return Date日期
+     * @Title:parseDate
+     * @Description: 字符串日期转Date型日期
      */
     public static Date parseDate(String dateStr) {
         return parseDate(dateStr, DATE_FORMAT_YYYY_MM_DD);
     }
 
     /**
-     * @Title:parseDate
-     * @Description: 字符串日期转Date型日期
      * @param dateStr 格式如：yyyyMMdd
      * @return Date日期
+     * @Title:parseDate
+     * @Description: 字符串日期转Date型日期
      */
     public static Date parseDateToNumber(String dateStr) {
         return parseDate(dateStr, C_MONTH_PATTON_DEFAULT);
     }
 
     /**
-     * @Title:parseDate
-     * @Description: 字符串日期转Date型日期
      * @param dateStr 格式如：yyyy-MM-dd
      * @return Date日期
+     * @Title:parseDate
+     * @Description: 字符串日期转Date型日期
      */
     public static Date parse2Date(String dateStr) {
         return parseDate(dateStr, C_TIME_PATTON_DEFAULT);
@@ -395,20 +378,20 @@ public class DateCalculate {
 
 
     /**
-     * @Title:parseDate
-     * @Description: 字符串日期转Date型日期
      * @param dateStr 格式如：yyyyMMdd HH:mm:ss
      * @return Date日期
+     * @Title:parseDate
+     * @Description: 字符串日期转Date型日期
      */
     public static Date parse4Date(String dateStr) {
         return parseDate(dateStr, C_TIME_PATTON_DEFAULT_4);
     }
 
     /**
-     * @Title:parseShortDate
-     * @Description: 字符串日期转Date型日期
      * @param dateStr 格式如：yyyyMMdd
      * @return Date日期
+     * @Title:parseShortDate
+     * @Description: 字符串日期转Date型日期
      */
     public static Date parseShortDate(String dateStr) {
         logger.info("方法名：parseShortDate, dateStr[{}]", dateStr);
@@ -416,10 +399,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getDate
-     * @Description: 日期转换2014-11-28转20141128 20141128转2014-11-28
      * @param date - 日期（如：20141128或2014-11-28）
      * @return yyyy-MM-dd或yyyyMMdd
+     * @Title:getDate
+     * @Description: 日期转换2014-11-28转20141128 20141128转2014-11-28
      */
     public static String getDate(String date) {
         logger.info("方法名：getDate, date[{}]", date);
@@ -438,10 +421,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getTime
-     * @Description: 时间转换15:12:02转151202 151202转15:12:02
      * @param time - 日期（如：15:12:02或151202）
      * @return HH:mm:ss或HHmmss
+     * @Title:getTime
+     * @Description: 时间转换15:12:02转151202 151202转15:12:02
      */
     public static String getTime(String time) {
         if (CommonUtils.isEmpty(time)) {
@@ -469,7 +452,7 @@ public class DateCalculate {
      * 取得指定月份的第一天
      *
      * @param strdate yyyy-MM
-     *            String
+     *                String
      * @return String
      */
     public static String getMonthBegin(String strdate) {
@@ -485,8 +468,7 @@ public class DateCalculate {
     /**
      * 取得指定月份的最后一天
      *
-     * @param strdate
-     *            String
+     * @param strdate String
      * @return String
      */
     public static String getMonthEnd(String strdate) {
@@ -505,10 +487,10 @@ public class DateCalculate {
 
 
     /**
-     * @Title:getDateAndWeek
-     * @Description: 根据日期类型转换为日期星期，转换后格式如：03月26日 星期四
      * @param date 日期类型
      * @return MM月dd日 EE
+     * @Title:getDateAndWeek
+     * @Description: 根据日期类型转换为日期星期，转换后格式如：03月26日 星期四
      */
     public static String getDateAndWeek(Date date) {
         DateFormat dateFormat = new SimpleDateFormat("M月d日 EE", Locale.CHINA);
@@ -516,10 +498,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getDateAndWeek
-     * @Description: 根据日期类型转换为日期星期，转换后格式如：2016-03-04 星期四
      * @param date 日期类型(yyyy-MM-dd)
      * @return MM月dd日 EE
+     * @Title:getDateAndWeek
+     * @Description: 根据日期类型转换为日期星期，转换后格式如：2016-03-04 星期四
      */
     public static String getYMDAndWeek(String date) {
         logger.info("方法名：getYMDAndWeek, date[{}]", date);
@@ -531,10 +513,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getDateAndWeek
-     * @Description: 根据日期类型转换为日期星期，转换后格式如：2016-03-04 星期四
      * @param date 日期类型(yyyyMMdd)
      * @return MM月dd日 EE
+     * @Title:getDateAndWeek
+     * @Description: 根据日期类型转换为日期星期，转换后格式如：2016-03-04 星期四
      */
     public static String getYMDAndWeekToNumber(String date) {
         logger.info("方法名：getYMDAndWeek, date[{}]", date);
@@ -546,10 +528,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getDateAndWeek
-     * @Description: 根据字符串日期转换为日期星期，转换后格式如：03-26 星期四
      * @param date - 字符串日期类型，日期格式如：20150326
      * @return MM月dd日 EE
+     * @Title:getDateAndWeek
+     * @Description: 根据字符串日期转换为日期星期，转换后格式如：03-26 星期四
      */
     public static String getDateAndWeek(String date) {
         logger.info("方法名：getDateAndWeek, date[{}]", date);
@@ -562,6 +544,7 @@ public class DateCalculate {
 
     /**
      * <p>Description:yyyyMMdd型日期转为M月d日(EE)</p>
+     *
      * @param date yyyyMMdd
      * @return
      * @author 陈姣姣
@@ -577,8 +560,8 @@ public class DateCalculate {
     }
 
     /**
-     *
      * <p>Description:yyyy-MM-dd型日期转为M月d日(EE</p>
+     *
      * @param date
      * @return
      * @author 陈姣姣
@@ -604,10 +587,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getDateToWeek
-     * @Description: 根据字符串日期转换为日期星期，转换后格式如：星期四
      * @param date - 字符串日期类型，日期格式如：20150326
      * @return MM月dd日 EE
+     * @Title:getDateToWeek
+     * @Description: 根据字符串日期转换为日期星期，转换后格式如：星期四
      */
     public static String getDateToWeek(Date date) {
         DateFormat dateFormat = new SimpleDateFormat("EE", Locale.CHINA);
@@ -615,10 +598,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getMonthDate
-     * @Description: 根据日期类型转换为-月-日
      * @param date 日期类型
      * @return M月d日
+     * @Title:getMonthDate
+     * @Description: 根据日期类型转换为-月-日
      */
     public static String getMonthDate(String date) {
         if (CommonUtils.isEmpty(date)) {
@@ -649,10 +632,10 @@ public class DateCalculate {
     }
 
     /**
-     * @Title:getMonthDate
-     * @Description: 根据字符串日期转换为-月-日
      * @param date 日期类型
      * @return M月d日
+     * @Title:getMonthDate
+     * @Description: 根据字符串日期转换为-月-日
      */
     public static String getMonthDate(Date date) {
         DateFormat dateFormat = new SimpleDateFormat("M月d日");
@@ -660,12 +643,11 @@ public class DateCalculate {
     }
 
     /**
-     *
-     * @Title: getDateTime
-     * @Description: 根据字符串时间转换为日期时间，转换后格式如：2015年5月11日 10:14
      * @param time 字符串时间
      * @return String(yyyy年M月d日 HH:mm)
      * @throws
+     * @Title: getDateTime
+     * @Description: 根据字符串时间转换为日期时间，转换后格式如：2015年5月11日 10:14
      */
     public static String getDateTime(String time) {
         if (CommonUtils.isEmpty(time)) {
@@ -682,12 +664,11 @@ public class DateCalculate {
     }
 
     /**
-     *
-     * @Title: getDate
-     * @Description: 根据字符串时间(20150511)转换为日期，转换后格式如：2015年5月11日
      * @param date 字符串时间
      * @return String String(yyyy年M月d日 )
      * @throws
+     * @Title: getDate
+     * @Description: 根据字符串时间(20150511)转换为日期，转换后格式如：2015年5月11日
      */
     public static String dateString(String date) {
         logger.info("方法名：DateString, date[{}]", date);
@@ -709,8 +690,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串日期yyyyMMddHH
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符串日期
      */
     public static String date2String(String date) {
@@ -720,8 +700,7 @@ public class DateCalculate {
     /**
      * 返回格式化的字符串日期yyyyMMddHH
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回字符串日期
      */
     public static String date2String(Date date) {
@@ -754,10 +733,11 @@ public class DateCalculate {
 
     /**
      * <p>Description:获得月份和天数</p>
+     *
      * @param str yyyyMMdd
      * @return
      * @author yuanyiping
-     * @date 2016年11月1日 下午6:12:55   
+     * @date 2016年11月1日 下午6:12:55
      */
     public static String getMonthAndDate(String str) {
         Date date = parseDate(str, C_MONTH_PATTON_DEFAULT);

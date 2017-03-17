@@ -40,7 +40,7 @@
           id="style_color"/>
     <link href="${ctx}/resources/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="${ctx}/favicon.ico"/>
+    <link rel="shortcut icon" href="${ctx}/resources/favicon.ico"/>
 </head>
 <!-- END HEAD -->
 
@@ -66,7 +66,7 @@
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
                         <li>
-                            <a href="index.jsp">Home</a>
+                            <a href="${ctx}/page/index">Home</a>
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>

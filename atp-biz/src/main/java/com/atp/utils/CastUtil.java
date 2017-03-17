@@ -13,8 +13,9 @@ package com.atp.utils;
 import java.math.BigDecimal;
 
 /**
- * <p>Description:类型转换工具类</p> 
+ * <p>Description:类型转换工具类</p>
  * <p>Company:上海投投金融有限责任公司</p>
+ *
  * @author 廖明华
  * @version V1.0
  */
@@ -22,6 +23,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 String 型</p>
+     *
      * @param obj 对象
      * @return 字符串
      * @author 廖明华
@@ -33,7 +35,8 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 String 型（提供默认值）</p>
-     * @param obj 对象
+     *
+     * @param obj          对象
      * @param defaultValue 默认值
      * @return String字符串
      * @author 廖明华
@@ -45,6 +48,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 double 型</p>
+     *
      * @param obj 对象
      * @return double对象
      * @author 廖明华
@@ -56,7 +60,8 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 double 型（提供默认值）</p>
-     * @param obj 对象
+     *
+     * @param obj          对象
      * @param defaultValue 默认值
      * @return double型
      * @author 廖明华
@@ -79,6 +84,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 long 型</p>
+     *
      * @param obj 对象
      * @return long型
      * @author 廖明华
@@ -90,7 +96,8 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 long 型（提供默认值）</p>
-     * @param obj 对象
+     *
+     * @param obj          对象
      * @param defaultValue 默认值
      * @return Long对象
      * @author 廖明华
@@ -113,6 +120,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 int 型</p>
+     *
      * @param obj 对象
      * @return int类型
      * @author 廖明华
@@ -124,7 +132,8 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 int 型（提供默认值）</p>
-     * @param obj 对象
+     *
+     * @param obj          对象
      * @param defaultValue 默认值
      * @return 如果不存在，返回默认值
      * @author 廖明华
@@ -147,6 +156,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 boolean 型</p>
+     *
      * @param obj 对象
      * @return 对象转成boolean类型
      * @author 廖明华
@@ -158,7 +168,8 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 boolean 型（提供默认值）</p>
-     * @param obj 对象
+     *
+     * @param obj          对象
      * @param defaultValue 默认值
      * @return 如果转换对象为空或者null，返回默认值，否则返回转换后的值
      * @author 廖明华
@@ -174,6 +185,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 String[] 型</p>
+     *
      * @param objArray 对象数组
      * @return 转为 String[] 型
      * @author 廖明华
@@ -194,6 +206,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 double[] 型</p>
+     *
      * @param objArray 数组
      * @return 转为 double[] 型
      * @author 廖明华
@@ -214,6 +227,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 long[] 型</p>
+     *
      * @param objArray 数组
      * @return 转为 long[] 型
      * @author 廖明华
@@ -234,6 +248,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 int[] 型</p>
+     *
      * @param objArray 数组
      * @return 转为 int[] 型
      * @author 廖明华
@@ -254,6 +269,7 @@ public class CastUtil {
 
     /**
      * <p>Description:转为 boolean[] 型</p>
+     *
      * @param objArray 数组
      * @return 转为 boolean[] 型
      * @author 廖明华
@@ -273,11 +289,11 @@ public class CastUtil {
     }
 
     /**
-     * @Title: bigDecimal2String
-     * @Description: 把bigDecimal2String类型的值转2位小数
      * @param val
      * @return String
      * @throws
+     * @Title: bigDecimal2String
+     * @Description: 把bigDecimal2String类型的值转2位小数
      */
     public static String bigDecimal2String(BigDecimal val) {
 
@@ -291,6 +307,7 @@ public class CastUtil {
 
     /**
      * <p>Description:String类型的数据转为BigDecimal型</p>
+     *
      * @param val
      * @return
      * @author 陈姣姣

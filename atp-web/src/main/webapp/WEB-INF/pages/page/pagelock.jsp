@@ -40,7 +40,7 @@
 <body class="">
 <div class="page-lock">
     <div class="page-logo">
-        <a class="brand" href="../index.jsp">
+        <a class="brand" href="${ctx}/page/index">
             <img src="${ctx}/resources/pages/img/logo-big.png" alt="logo"/> </a>
     </div>
     <div class="page-body">

@@ -3,6 +3,8 @@ package com.atp.web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 视图控制器,返回jsp视图给前端
  *
@@ -73,7 +75,7 @@ public class PageController {
      * @return the string
      */
     @RequestMapping("/pagelock")
-    public String pagelock (){
+    public String pagelock() {
         return "pagelock";
     }
 
@@ -83,7 +85,7 @@ public class PageController {
      * @return the string
      */
     @RequestMapping("/comingsoon")
-    public String comingsoon (){
+    public String comingsoon() {
         return "comingsoon";
     }
 
@@ -93,7 +95,7 @@ public class PageController {
      * @return the string
      */
     @RequestMapping("/calendar")
-    public String calendar (){
+    public String calendar() {
         return "calendar";
     }
 
@@ -103,7 +105,7 @@ public class PageController {
      * @return the string
      */
     @RequestMapping("/amcharts")
-    public String amcharts (){
+    public String amcharts() {
         return "amcharts";
     }
 
@@ -113,8 +115,10 @@ public class PageController {
      * @return the string
      */
     @RequestMapping("/datatables_managed")
-    public String datatablesManaged (){
-        return "datatables_managed";
+    public String datatablesManaged(HttpServletRequest request) {
+
+        request.setAttribute("name","666");
+        return "page/datatables_managed";
     }
 
     /**

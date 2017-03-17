@@ -1,8 +1,5 @@
 <%@ page language="java" pageEncoding="utf-8" %>
 <%@ include file="/WEB-INF/pages/common/taglibs.jsp" %>
-<script type="text/javascript">
-    var path="${ctx}";
-</script>
 <!DOCTYPE html>
 <html lang="zh_CN">
 <!-- BEGIN HEAD -->
@@ -39,7 +36,7 @@
     <!-- END PAGE LEVEL STYLES -->
     <!-- BEGIN THEME LAYOUT STYLES -->
     <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="${ctx}/favicn.ico"/>
+    <link rel="shortcut icon" href="${ctx}/resources/favicon.ico"/>
 </head>
 <!-- END HEAD -->
 
@@ -47,7 +44,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="${ctx}/page/login">
-        <img src="${ctx}/resources/pages/img/logo-big.png" alt=""/> </a>
+        <img src="${ctx}/resources/pages/img/logo-big.png" alt="logo"/> </a>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
@@ -101,7 +98,7 @@
     </form>
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
-    <form class="forget-form" action="login.jsp" method="post">
+    <form class="forget-form" action="${ctx}/login" method="post">
         <h3 class="font-green">Forget Password ?</h3>
         <p> Enter your e-mail address below to reset your password. </p>
         <div class="form-group">
@@ -114,7 +111,7 @@
     </form>
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
-    <form class="register-form" action="index.html" method="post">
+    <form class="register-form" action="${ctx}/index" method="post">
         <h3 class="font-green">Sign Up</h3>
         <p class="hint"> Enter your personal details below: </p>
         <div class="form-group">

@@ -19,8 +19,10 @@
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
           type="text/css"/>
-    <link href="${ctx}/resources/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${ctx}/resources/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+          type="text/css"/>
     <link href="${ctx}/resources/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
           type="text/css"/>
@@ -69,7 +71,8 @@
                     </ul>
                     <div class="page-toolbar">
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                            <button type="button" class="btn green btn-sm btn-outline dropdown-toggle"
+                                    data-toggle="dropdown"> Actions
                                 <i class="fa fa-angle-down"></i>
                             </button>
                             <ul class="dropdown-menu pull-right" role="menu">
@@ -85,7 +88,7 @@
                                     <a href="#">
                                         <i class="icon-user"></i> Something else here</a>
                                 </li>
-                                <li class="divider"> </li>
+                                <li class="divider"></li>
                                 <li>
                                     <a href="#">
                                         <i class="icon-bag"></i> Separated link</a>
@@ -102,16 +105,21 @@
                 <!-- END PAGE TITLE-->
                 <!-- END PAGE HEADER-->
                 <div class="m-heading-1 border-green m-bordered">
-                    <p> You can download and use all amCharts products for free. The only limitation of the free version is that a small link to this web site will be displayed in the top left corner of your charts. If you would like to use charts
+                    <p> You can download and use all amCharts products for free. The only limitation of the free version
+                        is that a small link to this web site will be displayed in the top left corner of your charts.
+                        If you would like to use charts
                         without this link, or you appreciate the software and would like to support its creators,
-                        <a href="http://www.amcharts.com/online-store/" target="_blank"> please purchase a commercial license</a>
+                        <a href="http://www.amcharts.com/online-store/" target="_blank"> please purchase a commercial
+                            license</a>
                     </p>
                     <p>
                         <span class="label label-success">Exclusively for Metronic users:</span>
                         <br> After purchasing Metronic you will get a promo code for
-                        <span class="label label-danger">15% DISCOUNT</span> for commercial license of amChart. To find the promo code please check the readme.txt file in the Metronic's purchased package. </p>
+                        <span class="label label-danger">15% DISCOUNT</span> for commercial license of amChart. To find
+                        the promo code please check the readme.txt file in the Metronic's purchased package. </p>
                     <p> For more info please chech the plugin's official
-                        <a class="btn red btn-outline" href="http://www.amcharts.com/demos/" target="_blank">demos & documentation</a>
+                        <a class="btn red btn-outline" href="http://www.amcharts.com/demos/" target="_blank">demos &
+                            documentation</a>
                     </p>
                 </div>
                 <div class="row">
@@ -136,7 +144,7 @@
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div id="chart_1" class="chart" style="height: 500px;"> </div>
+                                        <div id="chart_1" class="chart" style="height: 500px;"></div>
                                     </div>
                                 </div>
                                 <!-- END CHART PORTLET-->
@@ -163,7 +171,7 @@
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div id="chart_3" class="chart" style="height: 400px;"> </div>
+                                        <div id="chart_3" class="chart" style="height: 400px;"></div>
                                     </div>
                                 </div>
                                 <!-- END CHART PORTLET-->
@@ -189,7 +197,7 @@
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div id="chart_6" class="chart" style="height: 525px;"> </div>
+                                        <div id="chart_6" class="chart" style="height: 525px;"></div>
                                     </div>
                                 </div>
                                 <!-- END CHART PORTLET-->
@@ -212,18 +220,21 @@
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div id="chart_7" class="chart" style="height: 400px;"> </div>
+                                        <div id="chart_7" class="chart" style="height: 400px;"></div>
                                         <div class="well margin-top-20">
                                             <div class="row">
                                                 <div class="col-sm-3">
                                                     <label class="text-left">Top Radius:</label>
-                                                    <input class="chart_7_chart_input" data-property="topRadius" type="range" min="0" max="1.5" value="1" step="0.01" /> </div>
+                                                    <input class="chart_7_chart_input" data-property="topRadius"
+                                                           type="range" min="0" max="1.5" value="1" step="0.01"/></div>
                                                 <div class="col-sm-3">
                                                     <label class="text-left">Angle:</label>
-                                                    <input class="chart_7_chart_input" data-property="angle" type="range" min="0" max="89" value="30" step="1" /> </div>
+                                                    <input class="chart_7_chart_input" data-property="angle"
+                                                           type="range" min="0" max="89" value="30" step="1"/></div>
                                                 <div class="col-sm-3">
                                                     <label class="text-left">Depth:</label>
-                                                    <input class="chart_7_chart_input" data-property="depth3D" type="range" min="1" max="120" value="40" step="1" /> </div>
+                                                    <input class="chart_7_chart_input" data-property="depth3D"
+                                                           type="range" min="1" max="120" value="40" step="1"/></div>
                                             </div>
                                         </div>
                                     </div>
@@ -252,7 +263,7 @@
                                         </div>
                                     </div>
                                     <div class="portlet-body">
-                                        <div id="chart_12" class="chart" style="height: 500px;"> </div>
+                                        <div id="chart_12" class="chart" style="height: 500px;"></div>
                                     </div>
                                 </div>
                                 <!-- END CHART PORTLET-->
@@ -275,9 +286,11 @@
 <script src="${ctx}/resources/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/js.cookie.min.js" type="text/javascript"></script>
-<script src="${ctx}/resources/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+        type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="${ctx}/resources/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+        type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="${ctx}/resources/pages/scripts/charts-amcharts.min.js" type="text/javascript"></script>

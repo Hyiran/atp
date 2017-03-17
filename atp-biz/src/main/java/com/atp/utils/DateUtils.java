@@ -16,8 +16,8 @@ import org.apache.commons.lang.StringUtils;
  * 类描述： 日期工具类
  *
  * @author zhouhui
- * @createTime Mar 13, 2014
  * @version 1.0
+ * @createTime Mar 13, 2014
  * @modify Mar 13, 2014
  */
 public class DateUtils {
@@ -128,8 +128,7 @@ public class DateUtils {
      * Description:日期格式转换带中文年月日
      * </p>
      *
-     * @param data
-     *            yyyyMMdd格式日期20150211
+     * @param data yyyyMMdd格式日期20150211
      * @return 例：2014年12月24日
      * @author 庞子运
      * @date 2016年5月9日 下午2:43:38
@@ -151,10 +150,8 @@ public class DateUtils {
     /**
      * 日期加天数
      *
-     * @param date
-     *            日期
-     * @param day
-     *            天数
+     * @param date 日期
+     * @param day  天数
      * @return 返回相加后的日期
      */
     public static Date addDate(Date date, int day) {
@@ -166,8 +163,7 @@ public class DateUtils {
     /**
      * 返回毫秒
      *
-     * @param date
-     *            日期
+     * @param date 日期
      * @return 返回毫秒
      */
     public static long getMillis(Date date) {

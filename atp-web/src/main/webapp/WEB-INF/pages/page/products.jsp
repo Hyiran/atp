@@ -19,8 +19,10 @@
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
           type="text/css"/>
-    <link href="${ctx}/resources/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${ctx}/resources/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+          type="text/css"/>
     <link href="${ctx}/resources/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="${ctx}/resources/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
           type="text/css"/>
@@ -70,7 +72,8 @@
                     </ul>
                     <div class="page-toolbar">
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown"> Actions
+                            <button type="button" class="btn green btn-sm btn-outline dropdown-toggle"
+                                    data-toggle="dropdown"> Actions
                                 <i class="fa fa-angle-down"></i>
                             </button>
                             <ul class="dropdown-menu pull-right" role="menu">
@@ -86,7 +89,7 @@
                                     <a href="#">
                                         <i class="icon-user"></i> Something else here</a>
                                 </li>
-                                <li class="divider"> </li>
+                                <li class="divider"></li>
                                 <li>
                                     <a href="#">
                                         <i class="icon-bag"></i> Separated link</a>
@@ -105,20 +108,23 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="note note-danger">
-                            <p> NOTE: The below datatable is not connected to a real database so the filter and sorting is just simulated for demo purposes only. </p>
+                            <p> NOTE: The below datatable is not connected to a real database so the filter and sorting
+                                is just simulated for demo purposes only. </p>
                         </div>
                         <!-- Begin: life time stats -->
                         <div class="portlet ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-shopping-cart"></i>Order Listing </div>
+                                    <i class="fa fa-shopping-cart"></i>Order Listing
+                                </div>
                                 <div class="actions">
                                     <a href="javascript:;" class="btn btn-circle btn-info">
                                         <i class="fa fa-plus"></i>
                                         <span class="hidden-xs"> New Order </span>
                                     </a>
                                     <div class="btn-group">
-                                        <a class="btn btn-circle btn-default dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+                                        <a class="btn btn-circle btn-default dropdown-toggle" href="javascript:;"
+                                           data-toggle="dropdown">
                                             <i class="fa fa-share"></i>
                                             <span class="hidden-xs"> Tools </span>
                                             <i class="fa fa-angle-down"></i>
@@ -151,43 +157,52 @@
                                             <option value="delete">Delete</option>
                                         </select>
                                         <button class="btn btn-sm btn-success table-group-action-submit">
-                                            <i class="fa fa-check"></i> Submit</button>
+                                            <i class="fa fa-check"></i> Submit
+                                        </button>
                                     </div>
-                                    <table class="table table-striped table-bordered table-hover table-checkable" id="datatable_products">
+                                    <table class="table table-striped table-bordered table-hover table-checkable"
+                                           id="datatable_products">
                                         <thead>
                                         <tr role="row" class="heading">
                                             <th width="1%">
                                                 <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                    <input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes" />
+                                                    <input type="checkbox" class="group-checkable"
+                                                           data-set="#sample_2 .checkboxes"/>
                                                     <span></span>
                                                 </label>
                                             </th>
-                                            <th width="10%"> ID </th>
-                                            <th width="15%"> Product&nbsp;Name </th>
-                                            <th width="15%"> Category </th>
-                                            <th width="10%"> Price </th>
-                                            <th width="10%"> Quantity </th>
-                                            <th width="15%"> Date&nbsp;Created </th>
-                                            <th width="10%"> Status </th>
-                                            <th width="10%"> Actions </th>
+                                            <th width="10%"> ID</th>
+                                            <th width="15%"> Product&nbsp;Name</th>
+                                            <th width="15%"> Category</th>
+                                            <th width="10%"> Price</th>
+                                            <th width="10%"> Quantity</th>
+                                            <th width="15%"> Date&nbsp;Created</th>
+                                            <th width="10%"> Status</th>
+                                            <th width="10%"> Actions</th>
                                         </tr>
                                         <tr role="row" class="filter">
-                                            <td> </td>
+                                            <td></td>
                                             <td>
-                                                <input type="text" class="form-control form-filter input-sm" name="product_id"> </td>
+                                                <input type="text" class="form-control form-filter input-sm"
+                                                       name="product_id"></td>
                                             <td>
-                                                <input type="text" class="form-control form-filter input-sm" name="product_name"> </td>
+                                                <input type="text" class="form-control form-filter input-sm"
+                                                       name="product_name"></td>
                                             <td>
-                                                <select name="product_category" class="form-control form-filter input-sm">
+                                                <select name="product_category"
+                                                        class="form-control form-filter input-sm">
                                                     <option value="">Select...</option>
                                                     <option value="1">Mens</option>
                                                     <option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Footwear</option>
                                                     <option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clothing</option>
                                                     <option value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accessories</option>
-                                                    <option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fashion Outlet</option>
+                                                    <option value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fashion Outlet
+                                                    </option>
                                                     <option value="6">Football Shirts</option>
-                                                    <option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premier League</option>
-                                                    <option value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Football League</option>
+                                                    <option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Premier League
+                                                    </option>
+                                                    <option value="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Football League
+                                                    </option>
                                                     <option value="9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serie A</option>
                                                     <option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bundesliga</option>
                                                     <option value="11">Brands</option>
@@ -200,15 +215,21 @@
                                             </td>
                                             <td>
                                                 <div class="margin-bottom-5">
-                                                    <input type="text" class="form-control form-filter input-sm" name="product_price_from" placeholder="From" /> </div>
-                                                <input type="text" class="form-control form-filter input-sm" name="product_price_to" placeholder="To" /> </td>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="product_price_from" placeholder="From"/></div>
+                                                <input type="text" class="form-control form-filter input-sm"
+                                                       name="product_price_to" placeholder="To"/></td>
                                             <td>
                                                 <div class="margin-bottom-5">
-                                                    <input type="text" class="form-control form-filter input-sm" name="product_quantity_from" placeholder="From" /> </div>
-                                                <input type="text" class="form-control form-filter input-sm" name="product_quantity_to" placeholder="To" /> </td>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="product_quantity_from" placeholder="From"/></div>
+                                                <input type="text" class="form-control form-filter input-sm"
+                                                       name="product_quantity_to" placeholder="To"/></td>
                                             <td>
-                                                <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-                                                    <input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From">
+                                                <div class="input-group date date-picker margin-bottom-5"
+                                                     data-date-format="dd/mm/yyyy">
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           readonly name="product_created_from" placeholder="From">
                                                                 <span class="input-group-btn">
                                                                     <button class="btn btn-sm default" type="button">
                                                                         <i class="fa fa-calendar"></i>
@@ -216,7 +237,8 @@
                                                                 </span>
                                                 </div>
                                                 <div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-                                                    <input type="text" class="form-control form-filter input-sm" readonly name="product_created_to " placeholder="To">
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           readonly name="product_created_to " placeholder="To">
                                                                 <span class="input-group-btn">
                                                                     <button class="btn btn-sm default" type="button">
                                                                         <i class="fa fa-calendar"></i>
@@ -235,14 +257,16 @@
                                             <td>
                                                 <div class="margin-bottom-5">
                                                     <button class="btn btn-sm btn-success filter-submit margin-bottom">
-                                                        <i class="fa fa-search"></i> Search</button>
+                                                        <i class="fa fa-search"></i> Search
+                                                    </button>
                                                 </div>
                                                 <button class="btn btn-sm btn-default filter-cancel">
-                                                    <i class="fa fa-times"></i> Reset</button>
+                                                    <i class="fa fa-times"></i> Reset
+                                                </button>
                                             </td>
                                         </tr>
                                         </thead>
-                                        <tbody> </tbody>
+                                        <tbody></tbody>
                                     </table>
                                 </div>
                             </div>
@@ -264,9 +288,11 @@
 <script src="${ctx}/resources/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/js.cookie.min.js" type="text/javascript"></script>
-<script src="${ctx}/resources/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"
+        type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="${ctx}/resources/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"
+        type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="${ctx}/resources/global/scripts/app.min.js" type="text/javascript"></script>

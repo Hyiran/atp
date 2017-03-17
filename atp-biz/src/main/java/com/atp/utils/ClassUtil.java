@@ -16,8 +16,9 @@ import org.slf4j.LoggerFactory;
 import java.net.URL;
 
 /**
- * <p>Description:类操作工具类</p> 
+ * <p>Description:类操作工具类</p>
  * <p>Company:上海投投金融有限责任公司</p>
+ *
  * @author 廖明华
  * @version V1.0
  */
@@ -48,6 +49,7 @@ public class ClassUtil {
 
     /**
      * <p>Description:加载类（将自动初始化）</p>
+     *
      * @param className 类名字
      * @return 加载后的类对象
      * @author 廖明华
@@ -59,7 +61,8 @@ public class ClassUtil {
 
     /**
      * <p>Description:加载类</p>
-     * @param className 类对象
+     *
+     * @param className     类对象
      * @param isInitialized 是否初始化
      * @return 加载类对象
      * @author 廖明华
@@ -78,6 +81,7 @@ public class ClassUtil {
 
     /**
      * <p>Description:是否为 int 类型（包括 Integer 类型）</p>
+     *
      * @param type 对象类型
      * @return true：int类型，否则：false
      * @author 廖明华
@@ -89,6 +93,7 @@ public class ClassUtil {
 
     /**
      * <p>Description:是否为 long 类型（包括 Long 类型）</p>
+     *
      * @param type 类对象
      * @return trye是long类型，返回true；否则返回false
      * @author 廖明华
@@ -100,6 +105,7 @@ public class ClassUtil {
 
     /**
      * <p>Description:是否为 double 类型（包括 Double 类型）</p>
+     *
      * @param type 类对象
      * @return trye是double类型或者Double，返回true；否则返回false
      * @author 廖明华
@@ -111,6 +117,7 @@ public class ClassUtil {
 
     /**
      * <p>Description:是否为 String 类型</p>
+     *
      * @param type 类对象
      * @return trye是String，返回true；否则返回false
      * @author 廖明华

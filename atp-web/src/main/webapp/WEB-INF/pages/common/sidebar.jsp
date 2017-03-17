@@ -35,15 +35,16 @@
                 </form>
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
             </li>
-            <li class="nav-item start ">
+            <li class="nav-item start active open ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">Dashboard</span>
-                    <span class="arrow"></span>
+                    <span class="selected"></span>
+                    <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item start ">
-                        <a href="${ctx}/index" class="nav-link ">
+                    <li class="nav-item start active open ">
+                        <a href="${ctx}/page/index" class="nav-link ">
                             <i class="icon-bar-chart"></i>
                             <span class="title">Dashboard 1</span>
                         </a>
@@ -186,12 +187,11 @@
                     <span class="arrow"></span>
                 </a>
             </li>
-            <li class="nav-item  active open">
+            <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
                     <span class="title">System</span>
-                    <span class="selected"></span>
-                    <span class="arrow open"></span>
+                    <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
@@ -199,7 +199,7 @@
                             <span class="title">Coming Soon</span>
                         </a>
                     </li>
-                    <li class="nav-item  active open">
+                    <li class="nav-item ">
                         <a href="${ctx}/error/404" class="nav-link ">
                             <span class="title">404 Page</span>
                             <span class="selected"></span>
