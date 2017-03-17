@@ -5,7 +5,7 @@ import com.atp.common.Enums;
 import com.atp.common.MessageResp;
 import com.atp.dao.AtpTopCaseMapper;
 import com.atp.model.AtpTopCase;
-import com.atp.service.intf.ITopService;
+import com.atp.service.intf.ITopCaseService;
 import com.atp.utils.Helper;
 import com.atp.utils.HttpClientUtil;
 import com.atp.utils.JsonCastUtil;
@@ -25,14 +25,14 @@ import java.util.Map;
  * <p>Descript：</p>
  * Created by minglu on 2017/2/21.
  */
-public class TopServiceImpl implements ITopService {
+public class TopCaseServiceImpl implements ITopCaseService {
 
   /*  public static void main(String[] args){
         EnumMap<Enums,String> emap = new EnumMap<Enums, String>(Enums.class);
         System.out.print(emap.get(Enums.CH001));
     }*/
 
-    public static final Logger logger = LoggerFactory.getLogger(TopServiceImpl.class);
+    public static final Logger logger = LoggerFactory.getLogger(TopCaseServiceImpl.class);
 
     @Resource
     public AtpTopCaseMapper atpTopCaseMapper;

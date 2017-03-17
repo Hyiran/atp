@@ -24,8 +24,9 @@
           type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <link href="${ctx}/resources/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
-    <link href="${ctx}/resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="${ctx}/resources/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet"
+          type="text/css"/>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="${ctx}/resources/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css"/>
@@ -63,7 +64,7 @@
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
                         <li>
-                            <a href="${ctx}/index">Home</a>
+                            <a href="${ctx}/page/index">Home</a>
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
@@ -184,10 +185,11 @@
                                                 <span></span>
                                             </label>
                                         </th>
-                                        <th> Username</th>
-                                        <th> Email</th>
+                                        <th> ConfigType</th>
+                                        <th> Config</th>
                                         <th> Status</th>
-                                        <th> Joined</th>
+                                        <th> CreatTime</th>
+                                        <th>CreatUser</th>
                                         <th> Actions</th>
                                     </tr>
                                     </thead>
@@ -199,54 +201,67 @@
                                         <th></th>
                                         <th></th>
                                         <th></th>
+                                        <th></th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1"/>
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                        <td> shuxer</td>
-                                        <td>
-                                            <a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a>
-                                        </td>
-                                        <td>
-                                            <span class="label label-sm label-success"> Approved </span>
-                                        </td>
-                                        <td class="center"> 12 Jan 2012</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs green dropdown-toggle" type="button"
-                                                        data-toggle="dropdown" aria-expanded="false"> Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu pull-left" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-docs"></i> New Post </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-tag"></i> New Comment </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-user"></i> New User </a>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-flag"></i> Comments
-                                                            <span class="badge badge-success">4</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <c:forEach var="item" items="${cfgList}">
+                                        <tr class="odd gradeX">
+                                            <td>
+                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                    <input type="checkbox" class="checkboxes" value="1"/>
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <c:choose>
+                                                    <c:when test="${item.configType == 1}"><span> InstId</span></c:when>
+                                                    <c:when test="${item.configType == 2}"><span> BusinType</span></c:when>
+                                                    <c:when test="${item.configType == 3}"><span> URL</span></c:when>
+                                                </c:choose>
+                                            </td>
+                                            <td>${item.config}</td>
+                                            <td>
+                                                <c:choose>
+                                                    <c:when test="${item.status == 0}"><span
+                                                            class="label label-sm label-success"> 可用 </span></c:when>
+                                                    <c:when test="${item.status == 0}"><span
+                                                            class="label label-sm label-warning"> 不可用 </span></c:when>
+                                                </c:choose>
+                                            </td>
+                                            <td class="center"> ${item.creatTime}</td>
+                                            <td class="center">${item.creatUser}</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-xs green dropdown-toggle" type="button"
+                                                            data-toggle="dropdown" aria-expanded="false"> Actions
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-left" role="menu">
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <i class="icon-docs"></i> New Post </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <i class="icon-tag"></i> New Comment </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <i class="icon-user"></i> New User </a>
+                                                        </li>
+                                                        <li class="divider"></li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <i class="icon-flag"></i> Comments
+                                                                <span class="badge badge-success">4</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
                                     <tr class="odd gradeX">
                                         <td>
                                             <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
@@ -456,7 +471,8 @@
 <!-- END CORE PLUGINS -->
 <script src="${ctx}/resources/global/scripts/datatable.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-<script src="${ctx}/resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
+        type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="${ctx}/resources/global/scripts/app.min.js" type="text/javascript"></script>

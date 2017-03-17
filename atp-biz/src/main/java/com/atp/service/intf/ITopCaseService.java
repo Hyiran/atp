@@ -8,7 +8,7 @@ import java.util.List;
  * <p>Descript：</p>
  * Created by minglu on 2017/2/21.
  */
-public interface ITopService {
+public interface ITopCaseService {
 
 
     /**

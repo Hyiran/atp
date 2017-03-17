@@ -2,6 +2,8 @@ package com.atp.dao;
 
 import com.atp.model.AtpTopCfg;
 
+import java.util.List;
+
 public interface AtpTopCfgMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface AtpTopCfgMapper {
     int updateByPrimaryKeySelective(AtpTopCfg record);
 
     int updateByPrimaryKey(AtpTopCfg record);
+
+    List<AtpTopCfg> queryTopCfg();
 }

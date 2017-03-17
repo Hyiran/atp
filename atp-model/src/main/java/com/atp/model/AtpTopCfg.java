@@ -9,7 +9,7 @@ public class AtpTopCfg {
 
     private Integer status;
 
-    private String configType;
+    private Integer configType;
 
     private Date creatTime;
 
@@ -39,12 +39,12 @@ public class AtpTopCfg {
         this.status = status;
     }
 
-    public String getConfigType() {
+    public Integer getConfigType() {
         return configType;
     }
 
-    public void setConfigType(String configType) {
-        this.configType = configType == null ? null : configType.trim();
+    public void setConfigType(Integer configType) {
+        this.configType = configType;
     }
 
     public Date getCreatTime() {

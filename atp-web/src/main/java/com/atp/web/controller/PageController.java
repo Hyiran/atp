@@ -1,9 +1,14 @@
 package com.atp.web.controller;
 
+import com.atp.model.AtpTopCfg;
+import com.atp.service.intf.ITopCfgService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 视图控制器,返回jsp视图给前端
@@ -15,6 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/page")
 public class PageController {
 
+    @Resource
+    public ITopCfgService topCfgService;
     /**
      * 登录页
      */
@@ -46,7 +53,7 @@ public class PageController {
      */
     @RequestMapping("/search")
     public String search() {
-        return "search";
+        return "page/search";
     }
 
     /**
@@ -56,7 +63,7 @@ public class PageController {
      */
     @RequestMapping("/products")
     public String products() {
-        return "products";
+        return "page/products";
     }
 
     /**
@@ -66,7 +73,7 @@ public class PageController {
      */
     @RequestMapping("/productsedit")
     public String prodictsedit() {
-        return "productsedit";
+        return "page/productsedit";
     }
 
     /**
@@ -76,7 +83,7 @@ public class PageController {
      */
     @RequestMapping("/pagelock")
     public String pagelock() {
-        return "pagelock";
+        return "page/pagelock";
     }
 
     /**
@@ -86,7 +93,7 @@ public class PageController {
      */
     @RequestMapping("/comingsoon")
     public String comingsoon() {
-        return "comingsoon";
+        return "page/comingsoon";
     }
 
     /**
@@ -96,7 +103,7 @@ public class PageController {
      */
     @RequestMapping("/calendar")
     public String calendar() {
-        return "calendar";
+        return "page/calendar";
     }
 
     /**
@@ -106,7 +113,7 @@ public class PageController {
      */
     @RequestMapping("/amcharts")
     public String amcharts() {
-        return "amcharts";
+        return "page/amcharts";
     }
 
     /**
@@ -115,9 +122,10 @@ public class PageController {
      * @return the string
      */
     @RequestMapping("/datatables_managed")
-    public String datatablesManaged(HttpServletRequest request) {
+    public String datatablesManaged(Model model, HttpServletRequest request) {
 
-        request.setAttribute("name","666");
+        List<AtpTopCfg> cfgList = topCfgService.queryTopCfg();
+        request.setAttribute("cfgList",cfgList);
         return "page/datatables_managed";
     }
 
