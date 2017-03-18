@@ -89,7 +89,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">
-                                <a href="${ctx}/page/datatables_managed" class="nav-link "> Managed
+                                <a href="${ctx}/page/config" class="nav-link "> Managed
                                     Datatables </a>
                             </li>
                         </ul>

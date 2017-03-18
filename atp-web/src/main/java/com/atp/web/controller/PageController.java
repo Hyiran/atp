@@ -121,12 +121,12 @@ public class PageController {
      *
      * @return the string
      */
-    @RequestMapping("/datatables_managed")
+    @RequestMapping("/config")
     public String datatablesManaged(Model model, HttpServletRequest request) {
 
         List<AtpTopCfg> cfgList = topCfgService.queryTopCfg();
         request.setAttribute("cfgList",cfgList);
-        return "page/datatables_managed";
+        return "page/config";
     }
 
     /**
