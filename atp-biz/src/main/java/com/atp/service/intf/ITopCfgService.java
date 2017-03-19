@@ -12,8 +12,15 @@ public interface ITopCfgService {
     /**
      * Query top cfg list.
      *
-     *
      * @return the list
      */
     public List<AtpTopCfg> queryTopCfg();
+
+    /**
+     * Update by primary key selective int.
+     *
+     * @param record the record
+     * @return the int
+     */
+    int updateByPrimaryKeySelective(AtpTopCfg record);
 }

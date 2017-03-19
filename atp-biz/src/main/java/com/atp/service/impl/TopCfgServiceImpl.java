@@ -25,7 +25,14 @@ public class TopCfgServiceImpl implements ITopCfgService {
 
     @Override
     public List<AtpTopCfg> queryTopCfg(){
+        logger.info("**********开始查询topconfig信息**********");
         return atpTopCfgMapper.queryTopCfg();
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(AtpTopCfg record) {
+        logger.info("**********更新topconfig信息");
+        return atpTopCfgMapper.updateByPrimaryKey(record);
     }
 
 }

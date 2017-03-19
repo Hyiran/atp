@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@ page language="java"  pageEncoding="utf-8" %>
 <%@ include file="/WEB-INF/pages/common/taglibs.jsp" %>
 
 <!DOCTYPE html>
@@ -239,12 +239,12 @@
                                                     </button>
                                                     <ul class="dropdown-menu pull-left" role="menu">
                                                         <li>
-                                                            <a href="javascript:;">
-                                                                <i class="icon-docs"></i> New Post </a>
+                                                            <a href="javascript:;" onclick="cfgdisable(${item.id},${item.status})">
+                                                                <i class="icon-docs"></i> Disable </a>
                                                         </li>
                                                         <li>
                                                             <a href="javascript:;">
-                                                                <i class="icon-tag"></i> New Comment </a>
+                                                                <i class="icon-tag"></i> Enable </a>
                                                         </li>
                                                         <li>
                                                             <a href="javascript:;">
@@ -276,6 +276,7 @@
                                         <td>
                                             <span class="label label-sm label-warning"> Suspended </span>
                                         </td>
+                                        <td class="center"> 12.12.2011</td>
                                         <td class="center"> 12.12.2011</td>
                                         <td>
                                             <div class="btn-group">
@@ -322,6 +323,7 @@
                                             <span class="label label-sm label-danger"> Blocked </span>
                                         </td>
                                         <td class="center"> 12.12.2011</td>
+                                        <td class="center"> 12.12.2011</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="btn btn-xs green dropdown-toggle" type="button"
@@ -367,6 +369,7 @@
                                             <span class="label label-sm label-info"> Info </span>
                                         </td>
                                         <td class="center"> 12.12.2011</td>
+                                        <td class="center"> 12.12.2011</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="btn btn-xs green dropdown-toggle" type="button"
@@ -411,6 +414,7 @@
                                         <td>
                                             <span class="label label-sm label-danger"> Rejected </span>
                                         </td>
+                                        <td class="center"> 12.12.2011</td>
                                         <td class="center"> 12.12.2011</td>
                                         <td>
                                             <div class="btn-group">

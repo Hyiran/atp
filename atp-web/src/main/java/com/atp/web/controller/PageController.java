@@ -15,15 +15,21 @@ import java.util.List;
  *
  * @author StarZou
  * @since 2014年5月28日 下午4:00:49
- **/
+ */
 @Controller
 @RequestMapping("/page")
 public class PageController {
 
+    /**
+     * The Top cfg service.
+     */
     @Resource
     public ITopCfgService topCfgService;
+
     /**
      * 登录页
+     *
+     * @return the string
      */
     @RequestMapping("/login")
     public String login() {
@@ -32,6 +38,8 @@ public class PageController {
 
     /**
      * 首页
+     *
+     * @return the string
      */
     @RequestMapping("/index")
     public String index() {
@@ -40,6 +48,8 @@ public class PageController {
 
     /**
      * dashboard页
+     *
+     * @return the string
      */
     @RequestMapping("/dashboard")
     public String dashboard() {
@@ -119,18 +129,37 @@ public class PageController {
     /**
      * Datatables页
      *
+     * @param model   the model
+     * @param request the request
      * @return the string
      */
-    @RequestMapping("/config")
-    public String datatablesManaged(Model model, HttpServletRequest request) {
+    @RequestMapping("/topconfig")
+    public String topConfig(Model model, HttpServletRequest request) {
 
         List<AtpTopCfg> cfgList = topCfgService.queryTopCfg();
         request.setAttribute("cfgList",cfgList);
-        return "page/config";
+        return "page/topconfig";
+    }
+
+    /**
+     * Top case string.
+     *
+     * @param model   the model
+     * @param request the request
+     * @return the string
+     */
+    @RequestMapping("/topcase")
+    public String topCase(Model model, HttpServletRequest request) {
+
+        List<AtpTopCfg> cfgList = topCfgService.queryTopCfg();
+        request.setAttribute("cfgList",cfgList);
+        return "page/topcase";
     }
 
     /**
      * 404页
+     *
+     * @return the string
      */
     @RequestMapping("/404")
     public String error404() {
@@ -139,6 +168,8 @@ public class PageController {
 
     /**
      * 401页
+     *
+     * @return the string
      */
     @RequestMapping("/401")
     public String error401() {
@@ -147,6 +178,8 @@ public class PageController {
 
     /**
      * 500页
+     *
+     * @return the string
      */
     @RequestMapping("/500")
     public String error500() {

@@ -89,8 +89,10 @@
                         </a>
                         <ul class="sub-menu">
                             <li class="nav-item ">
-                                <a href="${ctx}/page/config" class="nav-link "> Managed
-                                    Datatables </a>
+                                <a href="${ctx}/page/topconfig" class="nav-link "> TopConfig</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="${ctx}/page/TopCase" class="nav-link "> TopCase</a>
                             </li>
                         </ul>
                     </li>
