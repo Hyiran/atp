@@ -3,6 +3,7 @@ package com.atp.dao;
 import com.atp.model.AtpTopCfg;
 
 import java.util.List;
+import java.util.Map;
 
 public interface AtpTopCfgMapper {
     int deleteByPrimaryKey(Integer id);
@@ -18,4 +19,6 @@ public interface AtpTopCfgMapper {
     int updateByPrimaryKey(AtpTopCfg record);
 
     List<AtpTopCfg> queryTopCfg();
+
+    int cfgStatus(Map map);
 }

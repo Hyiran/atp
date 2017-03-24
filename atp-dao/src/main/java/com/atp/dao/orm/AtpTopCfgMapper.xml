@@ -5,12 +5,14 @@
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="config" property="config" jdbcType="VARCHAR"/>
         <result column="status" property="status" jdbcType="INTEGER"/>
-        <result column="config_type" property="configType" jdbcType="INTEGER"/>
+        <result column="config_type" property="configType" jdbcType="VARCHAR"/>
         <result column="creat_time" property="creatTime" jdbcType="TIMESTAMP"/>
         <result column="creat_user" property="creatUser" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-        id, config, status, config_type, creat_time, creat_user
+        id, config, status, config_type, creat_time, creat_user, description, remark
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
@@ -22,12 +24,24 @@
         delete from atp_top_config
         where id = #{id,jdbcType=INTEGER}
     </delete>
+    <update id="updateByPrimaryKey" parameterType="com.atp.model.AtpTopCfg">
+        update atp_top_config
+        set config = #{config,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER},
+        config_type = #{configType,jdbcType=VARCHAR},
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
+        creat_user = #{creatUser,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR},
+        remark = #{remark,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
     <insert id="insert" parameterType="com.atp.model.AtpTopCfg">
-        insert into atp_top_config (id, config, status,
-        config_type, creat_time, creat_user
+        insert into atp_top_config (config, status,
+        config_type, creat_time, creat_user,description,remark
         )
-        values (#{id,jdbcType=INTEGER}, #{config,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
-        #{configType,jdbcType=INTEGER}, #{creatTime,jdbcType=TIMESTAMP}, #{creatUser,jdbcType=VARCHAR}
+        values (#{config,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+        #{configType,jdbcType=INTEGER}, CURRENT_TIMESTAMP, #{creatUser,jdbcType=VARCHAR},#{description,jdbcType=VARCHAR},
+        #{remark,jdbcType=VARCHAR}
         )
     </insert>
     <insert id="insertSelective" parameterType="com.atp.model.AtpTopCfg">
@@ -45,12 +59,16 @@
             <if test="configType != null">
                 config_type,
             </if>
-            <if test="creatTime != null">
-                creat_time,
-            </if>
             <if test="creatUser != null">
                 creat_user,
             </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            creat_time
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -65,12 +83,16 @@
             <if test="configType != null">
                 #{configType,jdbcType=INTEGER},
             </if>
-            <if test="creatTime != null">
-                #{creatTime,jdbcType=TIMESTAMP},
-            </if>
             <if test="creatUser != null">
                 #{creatUser,jdbcType=VARCHAR},
             </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            CURRENT_TIMESTAMP
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.atp.model.AtpTopCfg">
@@ -91,16 +113,13 @@
             <if test="creatUser != null">
                 creat_user = #{creatUser,jdbcType=VARCHAR},
             </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.atp.model.AtpTopCfg">
-        update atp_top_config
-        set config = #{config,jdbcType=VARCHAR},
-        status = #{status,jdbcType=INTEGER},
-        config_type = #{configType,jdbcType=INTEGER},
-        creat_time = #{creatTime,jdbcType=TIMESTAMP},
-        creat_user = #{creatUser,jdbcType=VARCHAR}
         where id = #{id,jdbcType=INTEGER}
     </update>
     <select id="queryTopCfg" resultMap="BaseResultMap" parameterType="java.util.Map">
@@ -108,22 +127,35 @@
         <include refid="Base_Column_List"/>
         from atp_top_config
         where 1=1
-            <if test="config != null and config != ''">
-                config = #{config,jdbcType=VARCHAR},
-            </if>
-            <if test="status != null and status != ''">
-                and status = #{status,jdbcType=INTEGER},
-            </if>
-            <if test="configType != null and configType != ''">
-                and config_type = #{configType,jdbcType=INTEGER},
-            </if>
-            <if test="creatTime != null and creatTime != ''">
-                and creat_time = #{creatTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="creatUser != null and creatUser != ''">
-                and creat_user = #{creatUser,jdbcType=VARCHAR},
-            </if>
-            ORDER BY id ASC
+        <if test="config != null and config != ''">
+            config = #{config,jdbcType=VARCHAR},
+        </if>
+        <if test="status != null and status != ''">
+            and status = #{status,jdbcType=INTEGER},
+        </if>
+        <if test="configType != null and configType != ''">
+            and config_type = #{configType,jdbcType=INTEGER},
+        </if>
+        <if test="creatTime != null and creatTime != ''">
+            and creat_time = #{creatTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="creatUser != null and creatUser != ''">
+            and creat_user = #{creatUser,jdbcType=VARCHAR},
+        </if>
+        <if test="description != null and description != ''">
+            and description = #{description,jdbcType=VARCHAR},
+        </if>
+        <if test="remark != null and remark != ''">
+            and remark= #{remark,jdbcType=VARCHAR}
+        </if>
+        ORDER BY id ASC
 
     </select>
+
+    <update id="cfgStatus" parameterType="java.util.Map">
+        update atp_top_config
+        set
+        status = #{status,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>

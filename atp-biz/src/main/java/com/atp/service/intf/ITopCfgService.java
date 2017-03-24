@@ -1,8 +1,10 @@
 package com.atp.service.intf;
 
+import com.atp.common.Result;
 import com.atp.model.AtpTopCfg;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by hanminglu on 2017/3/18.
@@ -16,11 +18,22 @@ public interface ITopCfgService {
      */
     public List<AtpTopCfg> queryTopCfg();
 
+
     /**
-     * Update by primary key selective int.
+     * Cfg disable result.
+     *
+     * @param map the map
+     * @return the result
+     */
+    public Result<Void> cfgStatus(Map map);
+
+
+    /**
+     * Cfg add result.
      *
      * @param record the record
-     * @return the int
+     * @return the result
      */
-    int updateByPrimaryKeySelective(AtpTopCfg record);
+    public Result<Void> cfgAdd(AtpTopCfg record);
+
 }
