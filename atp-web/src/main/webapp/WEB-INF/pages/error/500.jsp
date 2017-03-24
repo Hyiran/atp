@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/pages/common/taglibs.jsp" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -29,18 +29,18 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <meta content="" name="author"/>
     <meta name="MobileOptimized" content="320">
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-    <link href="assets/css/pages/error.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="${ctx}/resources/global/css/pages/error.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/global/css/custom.css" rel="stylesheet" type="text/css"/>
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
@@ -63,21 +63,17 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 </div>
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="assets/plugins/respond.min.js"></script>
-<script src="assets/plugins/excanvas.min.js"></script>
-<![endif]-->
-<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
+<script src="${ctx}/resources/global/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
         type="text/javascript"></script>
-<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
-<script src="assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
-<script src="assets/scripts/app.js"></script>
+<script src="${ctx}/resources/global/scripts/app.js"></script>
 <script>
     jQuery(document).ready(function () {
         App.init();

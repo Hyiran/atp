@@ -1,4 +1,4 @@
-<%@ page language="java"  pageEncoding="utf-8" %>
+<%@ page language="java" pageEncoding="utf-8" %>
 <%@ include file="/WEB-INF/pages/common/taglibs.jsp" %>
 
 <!DOCTYPE html>
@@ -40,6 +40,7 @@
     <!-- END THEME LAYOUT STYLES -->
 
     <link rel="shortcut icon" href="${ctx}/resources/favicon.ico"/>
+    <script>var contextPath = '${ctx}';</script>
 </head>
 <!-- END HEAD -->
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
@@ -145,9 +146,10 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
-                                                <button id="sample_editable_1_2_new" class="btn sbold green"> Add New
-                                                    <i class="fa fa-plus"></i>
-                                                </button>
+                                                <a type="button" class="btn sbold green" data-toggle="modal"
+                                                   data-target="#addConfigInfoModal" href="${ctx}/page/cfgadd"> Add
+                                                    New
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -173,6 +175,107 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- addConfigInfo Modal start -->
+                                    <div class="modal fade " id="addConfigInfoModal" tabindex="-1"
+                                         role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- addConfigInfo Modal end -->
+                                    <div class="table-container">
+                                        <table class="table table-striped table-bordered table-hover table-checkable"
+                                               id="datatable_ajax">
+                                            <thead>
+                                            <tr role="row" class="heading">
+                                                <th width="2%">
+                                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                        <input type="checkbox" class="group-checkable"
+                                                               data-set="#sample_2 .checkboxes"/>
+                                                        <span></span>
+                                                    </label>
+                                                </th>
+                                                <th width="5%"> Record&nbsp;#</th>
+                                                <th width="15%"> Date</th>
+                                                <th width="200"> Customer</th>
+                                                <th width="10%"> Ship&nbsp;To</th>
+                                                <th width="10%"> Price</th>
+                                                <th width="10%"> Amount</th>
+                                                <th width="10%"> Status</th>
+                                                <th width="10%"> Actions</th>
+                                            </tr>
+                                            <tr role="row" class="filter">
+                                                <td></td>
+                                                <td>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="order_id"></td>
+                                                <td>
+                                                    <div class="input-group date date-picker margin-bottom-5"
+                                                         data-date-format="dd/mm/yyyy">
+                                                        <input type="text" class="form-control form-filter input-sm"
+                                                               readonly name="order_date_from" placeholder="From">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-sm default" type="button">
+                                                                        <i class="fa fa-calendar"></i>
+                                                                    </button>
+                                                                </span>
+                                                    </div>
+                                                    <div class="input-group date date-picker"
+                                                         data-date-format="dd/mm/yyyy">
+                                                        <input type="text" class="form-control form-filter input-sm"
+                                                               readonly name="order_date_to" placeholder="To">
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-sm default" type="button">
+                                                                        <i class="fa fa-calendar"></i>
+                                                                    </button>
+                                                                </span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="order_customer_name"></td>
+                                                <td>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="order_ship_to"></td>
+                                                <td>
+                                                    <div class="margin-bottom-5">
+                                                        <input type="text" class="form-control form-filter input-sm"
+                                                               name="order_price_from" placeholder="From"/></div>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="order_price_to" placeholder="To"/></td>
+                                                <td>
+                                                    <div class="margin-bottom-5">
+                                                        <input type="text"
+                                                               class="form-control form-filter input-sm margin-bottom-5 clearfix"
+                                                               name="order_quantity_from" placeholder="From"/></div>
+                                                    <input type="text" class="form-control form-filter input-sm"
+                                                           name="order_quantity_to" placeholder="To"/></td>
+                                                <td>
+                                                    <select name="order_status"
+                                                            class="form-control form-filter input-sm">
+                                                        <option value="">Select...</option>
+                                                        <option value="pending">Pending</option>
+                                                        <option value="closed">Closed</option>
+                                                        <option value="hold">On Hold</option>
+                                                        <option value="fraud">Fraud</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <div class="margin-bottom-5">
+                                                        <button class="btn btn-sm green btn-outline filter-submit margin-bottom">
+                                                            <i class="fa fa-search"></i> Search
+                                                        </button>
+                                                    </div>
+                                                    <button class="btn btn-sm red btn-outline filter-cancel">
+                                                        <i class="fa fa-times"></i> Reset
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
                                 </div>
                                 <table class="table table-striped table-bordered table-hover table-checkable order-column"
                                        id="sample_1_2">
@@ -188,6 +291,7 @@
                                         <th> ConfigType</th>
                                         <th> Config</th>
                                         <th> Status</th>
+                                        <th> Description</th>
                                         <th> CreatTime</th>
                                         <th>CreatUser</th>
                                         <th> Actions</th>
@@ -195,6 +299,7 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
+                                        <th></th>
                                         <th></th>
                                         <th></th>
                                         <th></th>
@@ -225,227 +330,35 @@
                                                 <c:choose>
                                                     <c:when test="${item.status == 0}"><span
                                                             class="label label-sm label-success"> 可用 </span></c:when>
-                                                    <c:when test="${item.status == 0}"><span
+                                                    <c:when test="${item.status == 1}"><span
                                                             class="label label-sm label-warning"> 不可用 </span></c:when>
                                                 </c:choose>
                                             </td>
+                                            <td class="center"> ${item.description}</td>
                                             <td class="center"> ${item.creatTime}</td>
                                             <td class="center">${item.creatUser}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button class="btn btn-xs green dropdown-toggle" type="button"
-                                                            data-toggle="dropdown" aria-expanded="false"> Actions
-                                                        <i class="fa fa-angle-down"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu pull-left" role="menu">
-                                                        <li>
-                                                            <a href="javascript:;" onclick="cfgdisable(${item.id},${item.status})">
-                                                                <i class="icon-docs"></i> Disable </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:;">
-                                                                <i class="icon-tag"></i> Enable </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:;">
-                                                                <i class="icon-user"></i> New User </a>
-                                                        </li>
-                                                        <li class="divider"></li>
-                                                        <li>
-                                                            <a href="javascript:;">
-                                                                <i class="icon-flag"></i> Comments
-                                                                <span class="badge badge-success">4</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <c:choose>
+                                                        <c:when test="${item.status == 1}">
+                                                            <button type="button"
+                                                                    class="btn btn-circle btn-xs  btn-success"
+                                                                    onclick="cfgstatus(${item.id},${item.status})">
+                                                                Enable
+                                                            </button>
+                                                        </c:when>
+                                                        <c:when test="${item.status == 0}">
+                                                            <button type="button"
+                                                                    class="btn btn-circle btn-xs  btn-warning"
+                                                                    onclick="cfgstatus(${item.id},${item.status})">
+                                                                Disable
+                                                            </button>
+                                                        </c:when>
+                                                    </c:choose>
                                                 </div>
                                             </td>
                                         </tr>
                                     </c:forEach>
-                                    <tr class="odd gradeX">
-                                        <td>
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1"/>
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                        <td> looper</td>
-                                        <td>
-                                            <a href="mailto:looper90@gmail.com"> looper90@gmail.com </a>
-                                        </td>
-                                        <td>
-                                            <span class="label label-sm label-warning"> Suspended </span>
-                                        </td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs green dropdown-toggle" type="button"
-                                                        data-toggle="dropdown" aria-expanded="false"> Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-docs"></i> New Post </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-tag"></i> New Comment </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-user"></i> New User </a>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-flag"></i> Comments
-                                                            <span class="badge badge-success">4</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td>
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1"/>
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                        <td> user1wow</td>
-                                        <td>
-                                            <a href="mailto:userwow@gmail.com"> userwow@gmail.com </a>
-                                        </td>
-                                        <td>
-                                            <span class="label label-sm label-danger"> Blocked </span>
-                                        </td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs green dropdown-toggle" type="button"
-                                                        data-toggle="dropdown" aria-expanded="false"> Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-docs"></i> New Post </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-tag"></i> New Comment </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-user"></i> New User </a>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-flag"></i> Comments
-                                                            <span class="badge badge-success">4</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td>
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1"/>
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                        <td> foopl</td>
-                                        <td>
-                                            <a href="mailto:userwow@gmail.com"> good@gmail.com </a>
-                                        </td>
-                                        <td>
-                                            <span class="label label-sm label-info"> Info </span>
-                                        </td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs green dropdown-toggle" type="button"
-                                                        data-toggle="dropdown" aria-expanded="false"> Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-docs"></i> New Post </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-tag"></i> New Comment </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-user"></i> New User </a>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-flag"></i> Comments
-                                                            <span class="badge badge-success">4</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td>
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1"/>
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                        <td> weep</td>
-                                        <td>
-                                            <a href="mailto:userwow@gmail.com"> good@gmail.com </a>
-                                        </td>
-                                        <td>
-                                            <span class="label label-sm label-danger"> Rejected </span>
-                                        </td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td class="center"> 12.12.2011</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs green dropdown-toggle" type="button"
-                                                        data-toggle="dropdown" aria-expanded="false"> Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-docs"></i> New Post </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-tag"></i> New Comment </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-user"></i> New User </a>
-                                                    </li>
-                                                    <li class="divider"></li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-flag"></i> Comments
-                                                            <span class="badge badge-success">4</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -463,6 +376,7 @@
     <jsp:include page="../common/footer.jsp"></jsp:include>
     <!-- END FOOTER -->
 </div>
+
 <!-- BEGIN CORE PLUGINS -->
 <script src="${ctx}/resources/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -477,12 +391,14 @@
 <script src="${ctx}/resources/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
         type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="${ctx}/resources/global/scripts/app.min.js" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="${ctx}/resources/pages/scripts/table-datatables-managed.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <script src="${ctx}/resources/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
@@ -490,6 +406,29 @@
 <script src="${ctx}/resources/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
+<!--BEGIN CUSTOMＪＳ-->
+<script src="${ctx}/resources/custom/js/actions.js" type="text/javascript"></script>
+<script src="${ctx}/resources/custom/js/ajaxReq.js" type="text/javascript"></script>
+<script src="${ctx}/resources/custom/js/common.js" type="text/javascript"></script>
+<script> /*$(function () {
+    $('#addConfigInfoModal').modal({
+       // keyboard: true
+    })
+});*/
+//水平垂直居中显示
+$(document).ready(function(){
+    $('#addConfigInfoModal').on('shown.bs.modal', function (e) {
+        // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+        $(this).css('display', 'block');
+        var modalHeight = $(window).height() / 2 - $('#addConfigInfoModal .modal-dialog').height() / 2;
+        $(this).find('.modal-dialog').css({
+            'margin-top': modalHeight
+        });
+    });
+});
+
+</script>
+<!--END CUSTOMＪＳ-->
 </body>
 
 </html>

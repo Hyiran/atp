@@ -127,18 +127,13 @@ public class PageController {
     }
 
     /**
-     * Datatables页
+     * Cfgadd string.
      *
-     * @param model   the model
-     * @param request the request
      * @return the string
      */
-    @RequestMapping("/topconfig")
-    public String topConfig(Model model, HttpServletRequest request) {
-
-        List<AtpTopCfg> cfgList = topCfgService.queryTopCfg();
-        request.setAttribute("cfgList",cfgList);
-        return "page/topconfig";
+    @RequestMapping("/cfgadd")
+    public String cfgadd(){
+        return "common/cfgadd";
     }
 
     /**

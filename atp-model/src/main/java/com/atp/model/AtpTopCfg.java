@@ -1,19 +1,26 @@
 package com.atp.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class AtpTopCfg {
+public class AtpTopCfg implements Serializable {
     private Integer id;
 
     private String config;
 
     private Integer status;
 
-    private Integer configType;
+    private String configType;
 
     private Date creatTime;
 
     private String creatUser;
+
+    private String description;
+
+    private String remark;
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return id;
@@ -39,12 +46,12 @@ public class AtpTopCfg {
         this.status = status;
     }
 
-    public Integer getConfigType() {
+    public String getConfigType() {
         return configType;
     }
 
-    public void setConfigType(Integer configType) {
-        this.configType = configType;
+    public void setConfigType(String configType) {
+        this.configType = configType == null ? null : configType.trim();
     }
 
     public Date getCreatTime() {
@@ -61,5 +68,21 @@ public class AtpTopCfg {
 
     public void setCreatUser(String creatUser) {
         this.creatUser = creatUser == null ? null : creatUser.trim();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }
