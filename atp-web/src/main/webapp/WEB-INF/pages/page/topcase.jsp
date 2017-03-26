@@ -28,6 +28,8 @@
     <link href="${ctx}/resources/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
     <link href="${ctx}/resources/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet"
           type="text/css"/>
+    <link href="${ctx}/resources/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet"
+          type="text/css"/>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="${ctx}/resources/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css"/>
@@ -155,7 +157,7 @@
                                     <!-- addConfigInfo Modal end -->
                                     <div class="table-container">
                                         <table class="table table-striped table-bordered table-hover table-checkable"
-                                               id="casesearch">
+                                               id="datatable_ajax">
                                             <thead>
                                             <tr role="row" class="heading">
                                                 <th width="20%"> Date</th>
@@ -355,6 +357,8 @@
 <script src="${ctx}/resources/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
 <script src="${ctx}/resources/pages/scripts/components-bootstrap-select.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="${ctx}/resources/pages/scripts/table-datatables-buttons.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <script src="${ctx}/resources/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
