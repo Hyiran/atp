@@ -58,7 +58,7 @@ public class JsonCastUtil {
      * @author 廖明华
      * @date 2015年8月31日 下午5:46:57
      */
-    public static <T> T jsonStrToMap(Class<T> t, String str) {
+    public static <T> T jsonStrToObj(Class<T> t, String str) {
         return JSON.parseObject(str, t);
     }
 }

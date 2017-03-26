@@ -52,41 +52,15 @@
                 </ul>
             </li>
             <li class="heading">
-                <h3 class="uppercase">Features</h3>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-diamond"></i>
-                    <span class="title">UI Features</span>
-                    <span class="arrow"></span>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-puzzle"></i>
-                    <span class="title">Components</span>
-                    <span class="arrow"></span>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-bulb"></i>
-                    <span class="title">Elements</span>
-                    <span class="arrow"></span>
-                </a>
+                <h3 class="uppercase">TOP</h3>
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-briefcase"></i>
-                    <span class="title">Tables</span>
+                    <span class="title">TOP</span>
                     <span class="arrow"></span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="javascript:;" class="nav-link nav-toggle">
-                            <span class="title">Datatables</span>
-                            <span class="arrow"></span>
-                        </a>
+
                         <ul class="sub-menu">
                             <li class="nav-item ">
                                 <a href="${ctx}/config/topconfig" class="nav-link "> TopConfig</a>
@@ -96,8 +70,6 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
-            </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-bar-chart"></i>
@@ -181,13 +153,6 @@
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-social-dribbble"></i>
-                    <span class="title">General</span>
-                    <span class="arrow"></span>
-                </a>
             </li>
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">

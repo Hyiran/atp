@@ -20,4 +20,5 @@ public interface AtpTopCaseMapper {
     List<String> queryCaseList(String businType, String instId);
 
     void updateResponse(String response);
+    List<String> queryCaseList();
 }

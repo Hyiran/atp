@@ -5,41 +5,40 @@ import com.atp.common.MessageResp;
 import java.util.List;
 
 /**
- * <p>Descript：</p>
- * Created by minglu on 2017/2/21.
+ * The interface Top case service.
  */
 public interface ITopCaseService {
 
 
     /**
-     * <p>Description:(查询用例数据)</p>
+     * Query case list list.
      *
-     * @param businType
-     * @param instId
-     * @return List<String>
+     * @param businType the busin type
+     * @param instId    the inst id
+     * @return the list
      */
     List<String> queryCaseList(String businType, String instId);
 
     /**
-     * <p>Description:(将查询到的数据转成map，并根据对应的Bean赋值给Object)</p>
+     * Convert case list list.
      *
-     * @param businType
-     * @param instId
-     * @return List<Object>
+     * @param businType the busin type
+     * @param instId    the inst id
+     * @return the list
      */
     List<Object> convertCaseList(String businType, String instId);
 
 
     /**
-     * <p>Description:(将查询到的数据转成map，并根据对应的Bean赋值给Object)</p>
+     * Convert case object.
      *
-     * @param id
-     * @return Object
+     * @param id the id
+     * @return the object
      */
     Object convertCase(int id);
 
     /**
-     * <p>Description:运行测试用例并返回结果</p>
+     * Run case message resp.
      *
      * @param obj       the obj
      * @param businType the busin type
@@ -48,6 +47,13 @@ public interface ITopCaseService {
      * @return the message resp
      */
     MessageResp runCase(Object obj, String businType, String instId, String url);
+
+    /**
+     * Query case list list.
+     *
+     * @return the list
+     */
+    List<Object> queryCaseList();
 
 
 }

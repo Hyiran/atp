@@ -45,8 +45,8 @@ public class TopCfgServiceImpl implements ITopCfgService {
     public Result<Void> cfgAdd(AtpTopCfg record) {
         logger.info("**********新增topconfig信息：{}", record.toString());
         List<AtpTopCfg> list = atpTopCfgMapper.queryTopCfg();
-        for(AtpTopCfg atc : list){
-            if(record.getConfig() == atc.getConfig()){
+        for (AtpTopCfg atc : list) {
+            if (record.getConfig().equals(atc.getConfig()) && record.getConfigType().equals(atc.getConfigType())) {
                 return Result.fail(ErrorEnum.ERR_ADDCONFIG_REPEAT.getCode(), ErrorEnum.ERR_ADDCONFIG_REPEAT.getDesc(), null);
             }
         }

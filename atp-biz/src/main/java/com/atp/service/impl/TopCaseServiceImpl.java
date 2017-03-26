@@ -138,5 +138,10 @@ public class TopCaseServiceImpl implements ITopCaseService {
         return messageResp;
     }
 
+    @Override
+    public List<Object> queryCaseList() {
+        return null;
+    }
+
 
 }
