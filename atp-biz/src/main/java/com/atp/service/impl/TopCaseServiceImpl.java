@@ -2,7 +2,9 @@ package com.atp.service.impl;
 
 
 import com.atp.common.Enums;
+import com.atp.common.ErrorEnum;
 import com.atp.common.MessageResp;
+import com.atp.common.Result;
 import com.atp.dao.AtpTopCaseMapper;
 import com.atp.model.AtpTopCase;
 import com.atp.service.intf.ITopCaseService;
@@ -15,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,68 +49,54 @@ public class TopCaseServiceImpl implements ITopCaseService {
             return null;
         }
         return caseList;
-
-
     }
 
     @Override
     public List<Object> convertCaseList(String businType, String instId) {
 
         List<Object> objectList = new ArrayList<>();
-        String modelName = Enums.getByBusinType(businType).getbean();
-        //1.得到javaBean的一个字节码对象
-        Class clazz = null;
-        try {
-            clazz = Class.forName(modelName);
+        Class clazz = Enums.getByBusinType(businType).getbean();
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (null == clazz) {
-            logger.info("********通过modelName=[{}],获得javaBean的字节码对象失败*********", modelName);
-        } else {
-            List<String> caseList = queryCaseList(businType, instId);
-            for (String json : caseList) {
-                Map<String, String> map = JsonCastUtil.jsonStrToMap(json);
-                try {
-                    //2.生成该字节码的一个对象
-                    Object obj;
-                    obj = clazz.newInstance();
-                    //3.使用BeanUtils对对象进行赋值
-                    BeanUtils.copyProperties(map, obj);
-                    if (null != obj) {
-                        objectList.add(obj);
-                    } else {
-                        logger.info("**********使用BeanUtils进行赋值失败**********");
-                    }
-                } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
-                    e.printStackTrace();
+        List<String> caseList = queryCaseList(businType, instId);
+        for (String json : caseList) {
+            Map<String, String> map = JsonCastUtil.jsonStrToMap(json);
+            try {
+                //2.生成该字节码的一个对象
+                Object obj;
+                obj = clazz.newInstance();
+                //3.使用BeanUtils对对象进行赋值
+                BeanUtils.copyProperties(map, obj);
+                if (null != obj) {
+                    objectList.add(obj);
+                } else {
+                    logger.info("**********使用BeanUtils进行赋值失败**********");
                 }
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                e.printStackTrace();
             }
         }
+
         return objectList;
     }
 
     @Override
     public Object convertCase(int id) {
-        Class clazz;
         Object obj = null;
         AtpTopCase atpTop = atpTopCaseMapper.selectByPrimaryKey(id);
         if (null != atpTop) {
             String caseData = atpTop.getRequestData();
             String businType = atpTop.getBusinType();
             Map<String, String> map = JsonCastUtil.jsonStrToMap(caseData);
-            String modelName = Enums.getByBusinType(businType).getbean();
+            Class clazz = Enums.getByBusinType(businType).getbean();
             //1.得到javaBean的一个字节码对象
             try {
-                clazz = Class.forName(modelName);
                 //2.生成该字节码的一个对象
 
                 obj = clazz.newInstance();
                 //3.使用BeanUtils对对象进行赋值
                 BeanUtils.copyProperties(map, obj);
 
-            } catch (ClassNotFoundException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();
             }
         } else {
@@ -120,13 +109,7 @@ public class TopCaseServiceImpl implements ITopCaseService {
     @Override
     public MessageResp runCase(Object obj, String businType, String instId, String url) {
 
-        Class clazz = null;
-        String modelName = Enums.getByBusinType(businType).getbean();
-        try {
-            clazz = Class.forName(modelName);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        Class clazz = Enums.getByBusinType(businType).getbean();
         logger.info("*********开始初始化请求数据*********");
         String reqData = Helper.getReqData(businType, instId, clazz, obj);
         logger.info("*********初始化请求数据完毕，初始化结果为：[{}]", reqData);
@@ -140,7 +123,33 @@ public class TopCaseServiceImpl implements ITopCaseService {
 
     @Override
     public List<Object> queryCaseList() {
+        //TODO
         return null;
+    }
+
+    @Override
+    public Result<Void> addCase(AtpTopCase record) {
+        logger.info("**********新增Case：[{}]**********", record);
+        int num = atpTopCaseMapper.insertSelective(record);
+        if (num != 1) {
+            Result.fail(ErrorEnum.ERR_ADDCASE_FAILUER.getCode(), ErrorEnum.ERR_ADDCASE_FAILUER.getDesc(), null);
+        }
+        return Result.succeed(null);
+    }
+
+    public List classFields(String businType) {
+
+        logger.info("*********开始查询类属性信息*********");
+        Class clazz = Enums.getByBusinType(businType).getbean();
+        Field[] fields = clazz.getDeclaredFields();
+        List fieldList = new ArrayList();
+        for (int i = 0; i < fields.length; i++) {
+            Field fld = fields[i];
+            fieldList.add(fld.getName());
+        }
+        logger.info("**********查询属性Class：[{}],属性信息：[{}]", clazz, fieldList.toString());
+
+        return fieldList;
     }
 
 

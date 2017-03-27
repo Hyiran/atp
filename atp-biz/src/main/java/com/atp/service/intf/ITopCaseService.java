@@ -1,6 +1,8 @@
 package com.atp.service.intf;
 
 import com.atp.common.MessageResp;
+import com.atp.common.Result;
+import com.atp.model.AtpTopCase;
 
 import java.util.List;
 
@@ -54,6 +56,14 @@ public interface ITopCaseService {
      * @return the list
      */
     List<Object> queryCaseList();
+
+    /**
+     * Add case result.
+     *
+     * @param record the record
+     * @return the result
+     */
+    Result<Void> addCase(AtpTopCase record);
 
 
 }

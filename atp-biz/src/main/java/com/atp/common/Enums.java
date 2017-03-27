@@ -11,20 +11,21 @@ public enum Enums {
     /**
      * 用途：通过businType,bean 确定需要初始化的bean
      */
-    CH001("CH001", "com.uusoft.top.model.query.fund.QueryUnionFundInfoReq"),
-    CH002("CH002", "com.uusoft.top.model.query.common.QueryCustomerTotalAmountReq");
+    CH001("CH001", com.uusoft.top.model.query.fund.QueryUnionFundInfoReq.class),
+    CH002("CH002", com.uusoft.top.model.query.common.QueryCustomerTotalAmountReq.class);
 
 
     private String businType;
-    private String bean;
+    private Class bean;
 
-    private Enums(String businType, String bean) {
+    Enums(String businType, Class bean) {
 
         this.businType = businType;
         this.bean = bean;
 
     }
 
+  
     public static Map<String, Enums> map;
 
     static {
@@ -42,17 +43,11 @@ public enum Enums {
         return businType;
     }
 
-    public void setBusinType(String businType) {
-        this.businType = businType;
-    }
 
-    public String getbean() {
+    public Class getbean() {
         return bean;
     }
 
-    public void setbean(String bean) {
-        this.bean = bean;
-    }
 
 
 }

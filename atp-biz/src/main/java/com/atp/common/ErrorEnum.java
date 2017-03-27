@@ -124,7 +124,10 @@ public enum ErrorEnum
 
     ERR_DISABLE_FAILUER("4001","禁用失败！"),
     ERR_ADDCONFIG_FAILUER("4002","新增失败"),
-    ERR_ADDCONFIG_REPEAT("4003","配置已存在")
+    ERR_ADDCONFIG_REPEAT("4003","配置已存在"),
+    ERR_ADDCASE_FAILUER("4004","新增失败"),
+    ERR_ADDCASE_SUCCESS("4005","新增失败")
+
 
 
 
