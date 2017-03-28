@@ -66,7 +66,7 @@
                                 <a href="${ctx}/config/topconfig" class="nav-link "> TopConfig</a>
                             </li>
                             <li class="nav-item ">
-                                <a href="${ctx}/page/topcase" class="nav-link "> TopCase</a>
+                                <a href="${ctx}/case/topcase" class="nav-link "> TopCase</a>
                             </li>
                         </ul>
                     </li>

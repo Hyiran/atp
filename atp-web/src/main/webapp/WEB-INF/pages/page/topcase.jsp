@@ -244,11 +244,12 @@
                                                 <span></span>
                                             </label>
                                         </th>
-                                        <th> ConfigType</th>
-                                        <th> Config</th>
-                                        <th> Status</th>
-                                        <th> Description</th>
-                                        <th> CreatTime</th>
+                                        <th> CaseId</th>
+                                        <th> BusinType</th>
+                                        <th> InstId</th>
+                                        <th> Requst</th>
+                                        <th> Response</th>
+                                        <th>CreatTime</th>
                                         <th>CreatUser</th>
                                         <th> Actions</th>
                                     </tr>
@@ -263,10 +264,11 @@
                                         <th></th>
                                         <th></th>
                                         <th></th>
+                                        <th></th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    <c:forEach var="item" items="${cfgList}">
+                                    <c:forEach var="item" items="${caseList}">
                                         <tr class="odd gradeX">
                                             <td>
                                                 <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
@@ -274,23 +276,11 @@
                                                     <span></span>
                                                 </label>
                                             </td>
-                                            <td>
-                                                <c:choose>
-                                                    <c:when test="${item.configType == 1}"><span> InstId</span></c:when>
-                                                    <c:when test="${item.configType == 2}"><span> BusinType</span></c:when>
-                                                    <c:when test="${item.configType == 3}"><span> URL</span></c:when>
-                                                </c:choose>
-                                            </td>
-                                            <td>${item.config}</td>
-                                            <td>
-                                                <c:choose>
-                                                    <c:when test="${item.status == 0}"><span
-                                                            class="label label-sm label-success"> 可用 </span></c:when>
-                                                    <c:when test="${item.status == 1}"><span
-                                                            class="label label-sm label-warning"> 不可用 </span></c:when>
-                                                </c:choose>
-                                            </td>
-                                            <td class="center"> ${item.description}</td>
+                                            <td class="center"> ${item.caseId}</td>
+                                            <td class="center"> ${item.businType}</td>
+                                            <td class="center"> ${item.instId}</td>
+                                            <td class="center"> ${item.requestData}</td>
+                                            <td class="center"> ${item.responseData}</td>
                                             <td class="center"> ${item.creatTime}</td>
                                             <td class="center">${item.creatUser}</td>
                                             <td>

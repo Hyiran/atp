@@ -1,14 +1,7 @@
 package com.atp.web.controller;
 
-import com.atp.model.AtpTopCfg;
-import com.atp.service.intf.ITopCfgService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * 视图控制器,返回jsp视图给前端
@@ -19,12 +12,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/page")
 public class PageController {
-
-    /**
-     * The Top cfg service.
-     */
-    @Resource
-    public ITopCfgService topCfgService;
 
     /**
      * 登录页
@@ -126,30 +113,7 @@ public class PageController {
         return "page/amcharts";
     }
 
-    /**
-     * Cfgadd string.
-     *
-     * @return the string
-     */
-    @RequestMapping("/cfgadd")
-    public String cfgadd(){
-        return "common/cfgadd";
-    }
 
-    /**
-     * Top case string.
-     *
-     * @param model   the model
-     * @param request the request
-     * @return the string
-     */
-    @RequestMapping("/topcase")
-    public String topCase(Model model, HttpServletRequest request) {
-
-        List<AtpTopCfg> cfgList = topCfgService.queryTopCfg();
-        request.setAttribute("cfgList",cfgList);
-        return "page/topcase";
-    }
 
     /**
      * 404页

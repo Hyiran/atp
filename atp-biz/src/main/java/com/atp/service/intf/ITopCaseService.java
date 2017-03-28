@@ -55,7 +55,7 @@ public interface ITopCaseService {
      *
      * @return the list
      */
-    List<Object> queryCaseList();
+    List<AtpTopCase> queryCaseList();
 
     /**
      * Add case result.
@@ -64,6 +64,14 @@ public interface ITopCaseService {
      * @return the result
      */
     Result<Void> addCase(AtpTopCase record);
+
+    /**
+     * Class fields list.
+     *
+     * @param businType the busin type
+     * @return the list
+     */
+     List classFields(String businType);
 
 
 }

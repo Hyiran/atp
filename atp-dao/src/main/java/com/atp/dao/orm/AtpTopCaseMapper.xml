@@ -126,4 +126,9 @@
         creat_user = #{creatUser,jdbcType=VARCHAR}
         where case_id = #{caseId,jdbcType=INTEGER}
     </update>
+    <select id="queryCaseList" resultMap="BaseResultMap">
+        select 
+        <include refid="Base_Column_List"/>
+        FROM atp_top_case
+    </select>
 </mapper>

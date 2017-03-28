@@ -21,7 +21,7 @@ public interface AtpTopCaseMapper {
 
     void updateResponse(String response);
 
-    List<String> queryCaseList();
+    List<AtpTopCase> queryCaseList();
 
 
 }

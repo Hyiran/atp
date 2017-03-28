@@ -1,8 +1,8 @@
 package com.atp.service.impl;
 
 
-import com.atp.common.Enums;
-import com.atp.common.ErrorEnum;
+import com.atp.common.enumeration.TopClassEnum;
+import com.atp.common.enumeration.ErrorEnum;
 import com.atp.common.MessageResp;
 import com.atp.common.Result;
 import com.atp.dao.AtpTopCaseMapper;
@@ -15,6 +15,7 @@ import com.atp.utils.XmlUtil;
 import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Field;
@@ -28,12 +29,8 @@ import java.util.Map;
  * <p>Descript：</p>
  * Created by minglu on 2017/2/21.
  */
+@Service
 public class TopCaseServiceImpl implements ITopCaseService {
-
-  /*  public static void main(String[] args){
-        EnumMap<Enums,String> emap = new EnumMap<Enums, String>(Enums.class);
-        System.out.print(emap.get(Enums.CH001));
-    }*/
 
     public static final Logger logger = LoggerFactory.getLogger(TopCaseServiceImpl.class);
 
@@ -55,7 +52,7 @@ public class TopCaseServiceImpl implements ITopCaseService {
     public List<Object> convertCaseList(String businType, String instId) {
 
         List<Object> objectList = new ArrayList<>();
-        Class clazz = Enums.getByBusinType(businType).getbean();
+        Class clazz = TopClassEnum.getByBusinType(businType).getbean();
 
         List<String> caseList = queryCaseList(businType, instId);
         for (String json : caseList) {
@@ -87,15 +84,13 @@ public class TopCaseServiceImpl implements ITopCaseService {
             String caseData = atpTop.getRequestData();
             String businType = atpTop.getBusinType();
             Map<String, String> map = JsonCastUtil.jsonStrToMap(caseData);
-            Class clazz = Enums.getByBusinType(businType).getbean();
+            Class clazz = TopClassEnum.getByBusinType(businType).getbean();
             //1.得到javaBean的一个字节码对象
             try {
                 //2.生成该字节码的一个对象
-
                 obj = clazz.newInstance();
                 //3.使用BeanUtils对对象进行赋值
                 BeanUtils.copyProperties(map, obj);
-
             } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();
             }
@@ -109,7 +104,7 @@ public class TopCaseServiceImpl implements ITopCaseService {
     @Override
     public MessageResp runCase(Object obj, String businType, String instId, String url) {
 
-        Class clazz = Enums.getByBusinType(businType).getbean();
+        Class clazz = TopClassEnum.getByBusinType(businType).getbean();
         logger.info("*********开始初始化请求数据*********");
         String reqData = Helper.getReqData(businType, instId, clazz, obj);
         logger.info("*********初始化请求数据完毕，初始化结果为：[{}]", reqData);
@@ -122,9 +117,11 @@ public class TopCaseServiceImpl implements ITopCaseService {
     }
 
     @Override
-    public List<Object> queryCaseList() {
-        //TODO
-        return null;
+    public List<AtpTopCase> queryCaseList() {
+        logger.info("**********开始查询用例列表**********");
+        List<AtpTopCase> caseList;
+        caseList = atpTopCaseMapper.queryCaseList();
+        return caseList;
     }
 
     @Override
@@ -137,10 +134,11 @@ public class TopCaseServiceImpl implements ITopCaseService {
         return Result.succeed(null);
     }
 
+    @Override
     public List classFields(String businType) {
 
         logger.info("*********开始查询类属性信息*********");
-        Class clazz = Enums.getByBusinType(businType).getbean();
+        Class clazz = TopClassEnum.getByBusinType(businType).getbean();
         Field[] fields = clazz.getDeclaredFields();
         List fieldList = new ArrayList();
         for (int i = 0; i < fields.length; i++) {

@@ -1,6 +1,6 @@
 package com.atp.service.impl;
 
-import com.atp.common.ErrorEnum;
+import com.atp.common.enumeration.ErrorEnum;
 import com.atp.common.Result;
 import com.atp.dao.AtpTopCfgMapper;
 import com.atp.model.AtpTopCfg;

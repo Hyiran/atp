@@ -1,4 +1,4 @@
-package com.atp.common;
+package com.atp.common.enumeration;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Map;
  * <p>Descript：</p>
  * Created by minglu on 2017/2/16.
  */
-public enum Enums {
+public enum TopClassEnum {
     /**
      * 用途：通过businType,bean 确定需要初始化的bean
      */
@@ -18,7 +18,7 @@ public enum Enums {
     private String businType;
     private Class bean;
 
-    Enums(String businType, Class bean) {
+    TopClassEnum(String businType, Class bean) {
 
         this.businType = businType;
         this.bean = bean;
@@ -26,16 +26,16 @@ public enum Enums {
     }
 
   
-    public static Map<String, Enums> map;
+    public static Map<String, TopClassEnum> map;
 
     static {
-        map = new HashMap<String, Enums>();
-        for (Enums em : Enums.values()) {
+        map = new HashMap<String, TopClassEnum>();
+        for (TopClassEnum em : TopClassEnum.values()) {
             map.put(em.getBusinType(), em);
         }
     }
 
-    public static Enums getByBusinType(String businType) {
+    public static TopClassEnum getByBusinType(String businType) {
         return map.get(businType);
     }
 

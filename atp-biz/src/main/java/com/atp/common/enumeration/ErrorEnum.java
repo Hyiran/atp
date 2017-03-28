@@ -1,4 +1,4 @@
-package com.atp.common;
+package com.atp.common.enumeration;
 
 public enum ErrorEnum
 {
